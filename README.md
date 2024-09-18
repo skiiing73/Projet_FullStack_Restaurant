@@ -1,7 +1,3 @@
-Here’s an example README in English for your restaurant order application:
-
----
-
 # Restaurant Order Application
 
 ## Description
@@ -107,11 +103,10 @@ export class AppModule { }
 ```
 
 ## Contributing
-1. Fork the repository.
+1. Clone the repository.
 2. Create a new branch for your feature or bugfix.
 3. Commit your changes.
 4. Push your branch and create a pull request.
 
 ## License
 This project is licensed under the MIT License.
-
