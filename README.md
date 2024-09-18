@@ -115,6 +115,3 @@ export class AppModule { }
 ## License
 This project is licensed under the MIT License.
 
---- 
-
-This should give you a good starting point for the README of your project! Let me know if you need further customization.
