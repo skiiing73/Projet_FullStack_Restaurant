@@ -1,2 +1,98 @@
+############### APP_RESTAURANT ###############
+
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/App_Restaurant/dist
+/App_Restaurant/tmp
+/App_Restaurant/out-tsc
+/App_Restaurant/bazel-out
+
+# Node
+/App_Restaurant/node_modules
+/App_Restaurant/npm-debug.log
+/App_Restaurant/yarn-error.log
+
+# IDEs and editors
+/App_Restaurant/.idea/
+/App_Restaurant/.project
+/App_Restaurant/.classpath
+/App_Restaurant/.c9/
+/App_Restaurant/*.launch
+/App_Restaurant/.settings/
+/App_Restaurant/*.sublime-workspace
+
+# Visual Studio Code
+/App_Restaurant/.vscode/*
+!/App_Restaurant/.vscode/settings.json
+!/App_Restaurant/.vscode/tasks.json
+!/App_Restaurant/.vscode/launch.json
+!/App_Restaurant/.vscode/extensions.json
+/App_Restaurant/.history/*
+
+# Miscellaneous
+/App_Restaurant/.angular/cache
+/App_Restaurant/.sass-cache/
+/App_Restaurant/connect.lock
+/App_Restaurant/coverage
+/App_Restaurant/libpeerconnection.log
+/App_Restaurant/testem.log
+/App_Restaurant/typings
+
+# System files
+/App_Restaurant/.DS_Store
+/App_Restaurant/Thumbs.db
+
+
+
+############### BACK_END ###############
+
+# Config
+/Back_End/config.js
+
+# Node modules
+/Back_End/node_modules/
+
+# Fichiers de log
+/Back_End/logs
+/Back_End/*.log
+/Back_End/npm-debug.log*
+/Back_End/yarn-debug.log*
+/Back_End/yarn-error.log*
+
+# Fichiers d'environnement
+/Back_End/.env
+/Back_End/.env.local
+/Back_End/.env.*.local
+
+# Dossier de build
+/Back_End/dist/
+/Back_End/build/
+
+# Dossier de couverture
+/Back_End/coverage/
+
+# Système d'exploitation
+/Back_End/.DS_Store          # macOS
+/Back_End/Thumbs.db         # Windows
+
+# Répertoires temporaires
+/Back_End/tmp/
+/Back_End/temp/
+
+# Fichiers de sauvegarde
+/Back_End/*.bak
+/Back_End/*.swp
+/Back_End/*.swo
+
+# Configurations de l'éditeur
+/Back_End/.idea/            # JetBrains IDE
+/Back_End/.vscode/          # Visual Studio Code
+
+# Autres fichiers
+/Back_End/package-lock.json  # Si tu utilises Yarn, remplace par yarn.lock
+
+############### OTHER ###############
+
 .DS_Store
 Thumbs.db
