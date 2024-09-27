@@ -1,0 +1,13 @@
+<div class="card dish-card" style="border-radius: 15px; background-color: white; margin: 20px;">
+    <div class="card-body text-center">
+      <span class="badge bg-light text-dark" style="position: absolute; top: 10px; left: 10px;">{{ dish.type }}</span>
+      <img [src]="dish.photo" alt="" class="img-fluid rounded mb-3" style="max-width: 150px;">
+      <h5>{{ dish.name }}</h5>
+      <p>{{ dish.description }}</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <strong>{{ dish.price }}</strong>
+        <button class="btn btn-primary" (click)="onAddToCart()">Add To Cart <i class="fa fa-cart-plus"></i></button>
+      </div>
+    </div>
+  </div>
+  
