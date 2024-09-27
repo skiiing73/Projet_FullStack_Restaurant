@@ -1,0 +1,44 @@
+# Config
+config.js
+
+# Node modules
+node_modules/
+
+# Fichiers de log
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Fichiers d'environnement
+.env
+.env.local
+.env.*.local
+
+# Dossier de build
+dist/
+build/
+
+# Dossier de couverture
+coverage/
+
+# Système d'exploitation
+.DS_Store          # macOS
+Thumbs.db         # Windows
+
+# Répertoires temporaires
+tmp/
+temp/
+
+# Fichiers de sauvegarde
+*.bak
+*.swp
+*.swo
+
+# Configurations de l'éditeur
+.idea/            # JetBrains IDE
+.vscode/          # Visual Studio Code
+
+# Autres fichiers
+package-lock.json  # Si tu utilises Yarn, remplace par yarn.lock
