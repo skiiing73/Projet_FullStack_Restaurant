@@ -1,0 +1,107 @@
+[{
+  "_id": {
+    "$oid": "66f6b57d50885f8f653caee6"
+  },
+  "name": "burger",
+  "price": "11.90",
+  "description": "burger de papa",
+  "type": "dessert"
+},
+{
+  "_id": {
+    "$oid": "66f6b64f4d42ec1d4ddb889c"
+  },
+  "name": "burger",
+  "price": "21",
+  "description": "burger de maman",
+  "type": "dessert"
+},
+{
+  "_id": {
+    "$oid": "66f6b700a7ab8f60c34e0b31"
+  },
+  "name": "Spaghetti Carbonara",
+  "picture": "",
+  "price": 12.99,
+  "description": "Classic Italian pasta with a creamy sauce made from eggs, Parmesan, pancetta, and pepper.",
+  "type": "Main Course"
+},
+{
+  "_id": {
+    "$oid": "66f6b700a7ab8f60c34e0b32"
+  },
+  "name": "Margherita Pizza",
+  "picture": "",
+  "price": 10.5,
+  "description": "Neapolitan pizza topped with fresh tomatoes, mozzarella cheese, and basil leaves.",
+  "type": "Main Course"
+},
+{
+  "_id": {
+    "$oid": "66f6b700a7ab8f60c34e0b33"
+  },
+  "name": "Caesar Salad",
+  "picture": "",
+  "price": 8.75,
+  "description": "Romaine lettuce, croutons, and Parmesan cheese tossed in a Caesar dressing.",
+  "type": "Appetizer"
+},
+{
+  "_id": {
+    "$oid": "66f6b700a7ab8f60c34e0b34"
+  },
+  "name": "Chocolate Lava Cake",
+  "picture": "",
+  "price": 6.5,
+  "description": "A rich and gooey chocolate cake with a molten center, served warm.",
+  "type": "Dessert"
+},
+{
+  "_id": {
+    "$oid": "66f6b700a7ab8f60c34e0b35"
+  },
+  "name": "Tom Yum Soup",
+  "picture": "",
+  "price": 9,
+  "description": "A spicy and sour Thai soup with shrimp, mushrooms, and lemongrass.",
+  "type": "Appetizer"
+},
+{
+  "_id": {
+    "$oid": "66f6b700a7ab8f60c34e0b36"
+  },
+  "name": "Beef Bourguignon",
+  "picture": "",
+  "price": 18,
+  "description": "French stew made with beef braised in red wine, mushrooms, and onions.",
+  "type": "Main Course"
+},
+{
+  "_id": {
+    "$oid": "66f6b700a7ab8f60c34e0b37"
+  },
+  "name": "Cheesecake",
+  "picture": "",
+  "price": 7.25,
+  "description": "Creamy New York-style cheesecake with a graham cracker crust.",
+  "type": "Dessert"
+},
+{
+  "_id": {
+    "$oid": "66f6b700a7ab8f60c34e0b38"
+  },
+  "name": "Miso Soup",
+  "picture": "",
+  "price": 3.5,
+  "description": "Traditional Japanese soup made with miso paste, tofu, and seaweed.",
+  "type": "Appetizer"
+},
+{
+  "_id": {
+    "$oid": "66f6b708f4505277de822af7"
+  },
+  "name": "hot dog",
+  "price": "8.99",
+  "description": "un saucisse enrobé de pain",
+  "type": "entrée"
+}]

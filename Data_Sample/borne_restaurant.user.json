@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "66f6b6f8a7ab8f60c34e0b28"
+  },
+  "username": "john_doe",
+  "password": "password123",
+  "email": "john.doe@example.com",
+  "profile_picture": ""
+},
+{
+  "_id": {
+    "$oid": "66f6b6f8a7ab8f60c34e0b29"
+  },
+  "username": "jane_smith",
+  "password": "simplepass",
+  "email": "jane.smith@example.com",
+  "profile_picture": ""
+},
+{
+  "_id": {
+    "$oid": "66f6b6f8a7ab8f60c34e0b2a"
+  },
+  "username": "michael_brown",
+  "password": "mypassword",
+  "email": "michael.brown@example.com",
+  "profile_picture": ""
+},
+{
+  "_id": {
+    "$oid": "66f6b6f8a7ab8f60c34e0b2b"
+  },
+  "username": "sarah_jones",
+  "password": "qwerty123",
+  "email": "sarah.jones@example.com",
+  "profile_picture": ""
+},
+{
+  "_id": {
+    "$oid": "66f6b6f8a7ab8f60c34e0b2c"
+  },
+  "username": "david_clark",
+  "password": "letmein",
+  "email": "david.clark@example.com",
+  "profile_picture": ""
+},
+{
+  "_id": {
+    "$oid": "66f6b6f8a7ab8f60c34e0b2d"
+  },
+  "username": "emily_davis",
+  "password": "password",
+  "email": "emily.davis@example.com",
+  "profile_picture": ""
+},
+{
+  "_id": {
+    "$oid": "66f6b6f8a7ab8f60c34e0b2e"
+  },
+  "username": "william_jones",
+  "password": "abc123",
+  "email": "william.jones@example.com",
+  "profile_picture": ""
+},
+{
+  "_id": {
+    "$oid": "66f6b6f8a7ab8f60c34e0b2f"
+  },
+  "username": "olivia_miller",
+  "password": "olivia2024",
+  "email": "olivia.miller@example.com",
+  "profile_picture": ""
+}]

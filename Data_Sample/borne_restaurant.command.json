@@ -1,0 +1,91 @@
+[{
+  "_id": {
+    "$oid": "66f6b800a7ab8f60c34e0b40"
+  },
+  "list": [
+    "66f6b700a7ab8f60c34e0b31",
+    "66f6b700a7ab8f60c34e0b33",
+    "66f6b700a7ab8f60c34e0b34"
+  ],
+  "id_User": "66f6b6f8a7ab8f60c34e0b28",
+  "etat": "completed"
+},
+{
+  "_id": {
+    "$oid": "66f6b800a7ab8f60c34e0b41"
+  },
+  "list": [
+    "66f6b700a7ab8f60c34e0b32",
+    "66f6b700a7ab8f60c34e0b35"
+  ],
+  "id_User": "66f6b6f8a7ab8f60c34e0b29",
+  "etat": "pending"
+},
+{
+  "_id": {
+    "$oid": "66f6b800a7ab8f60c34e0b42"
+  },
+  "list": [
+    "66f6b700a7ab8f60c34e0b36",
+    "66f6b700a7ab8f60c34e0b38"
+  ],
+  "id_User": "66f6b6f8a7ab8f60c34e0b2a",
+  "etat": "in_progress"
+},
+{
+  "_id": {
+    "$oid": "66f6b800a7ab8f60c34e0b43"
+  },
+  "list": [
+    "66f6b700a7ab8f60c34e0b37"
+  ],
+  "id_User": "66f6b6f8a7ab8f60c34e0b2b",
+  "etat": "completed"
+},
+{
+  "_id": {
+    "$oid": "66f6b800a7ab8f60c34e0b44"
+  },
+  "list": [
+    "66f6b700a7ab8f60c34e0b33",
+    "66f6b700a7ab8f60c34e0b34",
+    "66f6b700a7ab8f60c34e0b38"
+  ],
+  "id_User": "66f6b6f8a7ab8f60c34e0b2c",
+  "etat": "pending"
+},
+{
+  "_id": {
+    "$oid": "66f6b800a7ab8f60c34e0b45"
+  },
+  "list": [
+    "66f6b700a7ab8f60c34e0b31",
+    "66f6b700a7ab8f60c34e0b32",
+    "66f6b700a7ab8f60c34e0b36"
+  ],
+  "id_User": "66f6b6f8a7ab8f60c34e0b2d",
+  "etat": "in_progress"
+},
+{
+  "_id": {
+    "$oid": "66f6b800a7ab8f60c34e0b46"
+  },
+  "list": [
+    "66f6b700a7ab8f60c34e0b37",
+    "66f6b700a7ab8f60c34e0b38"
+  ],
+  "id_User": "66f6b6f8a7ab8f60c34e0b2e",
+  "etat": "completed"
+},
+{
+  "_id": {
+    "$oid": "66f6b800a7ab8f60c34e0b47"
+  },
+  "list": [
+    "66f6b700a7ab8f60c34e0b35",
+    "66f6b700a7ab8f60c34e0b36",
+    "66f6b700a7ab8f60c34e0b32"
+  ],
+  "id_User": "66f6b6f8a7ab8f60c34e0b2f",
+  "etat": "pending"
+}]
