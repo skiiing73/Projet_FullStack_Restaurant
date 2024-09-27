@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Custom styles (optional) */
+        body {
+            background-color: #f9fafb; /* Tailwind's neutral background */
+        }
+
+        .delete-btn, .edit-btn {
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .delete-btn {
+            color: red;
+        }
+        .edit-btn {
+            color: blue;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-center items-center bg-gray-100">
+
+    <!-- Container -->
+    <div class="max-w-md w-full mx-auto bg-white rounded-lg shadow-md p-6">
+
+        <!-- Title -->
+        <h1 class="text-2xl font-bold text-gray-800 mb-4 text-center">Add dish</h1>
+
+        <!-- Form -->
+        <form action="/add_dish" method="POST" class="mb-6">
+            <div class="flex flex-col space-y-4">
+                <input 
+                    type="text" 
+                    name="name" 
+                    placeholder="dish name" 
+                    class="px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300" 
+                    required />
+                <input 
+                    type="int" 
+                    name="price" 
+                    placeholder="price" 
+                    class="px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300" 
+                    required />
+                <input 
+                    type="text" 
+                    name="description" 
+                    placeholder="description" 
+                    class="px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300" 
+                    required />
+                <input 
+                    type="text" 
+                    name="type" 
+                    placeholder="type" 
+                    class="px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300" 
+                    required />
+                <button 
+                    type="submit" 
+                    class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition duration-300">
+                    Add dish
+                </button>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
+
