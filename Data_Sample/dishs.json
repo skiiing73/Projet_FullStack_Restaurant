@@ -1,0 +1,66 @@
+[
+    {
+      "id": 1,
+      "name": "Spaghetti Carbonara",
+      "picture": "",
+      "price": 12.99,
+      "description": "Classic Italian pasta with a creamy sauce made from eggs, Parmesan, pancetta, and pepper.",
+      "type": "Main Course"
+    },
+    {
+      "id": 2,
+      "name": "Margherita Pizza",
+      "picture": "",
+      "price": 10.50,
+      "description": "Neapolitan pizza topped with fresh tomatoes, mozzarella cheese, and basil leaves.",
+      "type": "Main Course"
+    },
+    {
+      "id": 3,
+      "name": "Caesar Salad",
+      "picture": "",
+      "price": 8.75,
+      "description": "Romaine lettuce, croutons, and Parmesan cheese tossed in a Caesar dressing.",
+      "type": "Appetizer"
+    },
+    {
+      "id": 4,
+      "name": "Chocolate Lava Cake",
+      "picture": "",
+      "price": 6.50,
+      "description": "A rich and gooey chocolate cake with a molten center, served warm.",
+      "type": "Dessert"
+    },
+    {
+      "id": 5,
+      "name": "Tom Yum Soup",
+      "picture": "",
+      "price": 9.00,
+      "description": "A spicy and sour Thai soup with shrimp, mushrooms, and lemongrass.",
+      "type": "Appetizer"
+    },
+    {
+      "id": 6,
+      "name": "Beef Bourguignon",
+      "picture": "",
+      "price": 18.00,
+      "description": "French stew made with beef braised in red wine, mushrooms, and onions.",
+      "type": "Main Course"
+    },
+    {
+      "id": 7,
+      "name": "Cheesecake",
+      "picture": "",
+      "price": 7.25,
+      "description": "Creamy New York-style cheesecake with a graham cracker crust.",
+      "type": "Dessert"
+    },
+    {
+      "id": 8,
+      "name": "Miso Soup",
+      "picture": "",
+      "price": 3.50,
+      "description": "Traditional Japanese soup made with miso paste, tofu, and seaweed.",
+      "type": "Appetizer"
+    }
+  ]
