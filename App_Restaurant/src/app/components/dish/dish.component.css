@@ -1,0 +1,31 @@
+.dish-card {
+    background-color: #ffcccc;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .badge {
+    font-size: 12px;
+    background-color: #ffffff;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 50px;
+  }
+  
+  .dish-card h5 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .dish-card p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .dish-card button {
+    background-color: #6c63ff;
+    color: white;
+  }
+  
