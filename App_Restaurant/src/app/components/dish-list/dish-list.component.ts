@@ -16,7 +16,7 @@ export class DishListComponent {
       name: 'The Lovely Burger',
       description: 'High quality beef medium to well with cheese and bacon on a multigrain bun',
       price: 19.99,
-      photo: 'burger.jpeg',
+      photo: 'assets/burger.jpeg',
       type: 'Main Dish'
     },
     {
@@ -24,7 +24,23 @@ export class DishListComponent {
       name: 'American HOT DOG',
       description: 'High quality beef hot dog with mustard and onions',
       price: 15.99,
-      photo: 'hotdog.jpeg',
+      photo: 'assets/hotdog.jpeg',
+      type: 'Main Dish'
+    },
+    {
+      id: 2,
+      name: 'American HOT DOG',
+      description: 'High quality beef hot dog with mustard and onions',
+      price: 15.99,
+      photo: 'assets/hotdog.jpeg',
+      type: 'Main Dish'
+    },
+    {
+      id: 2,
+      name: 'American HOT DOG',
+      description: 'High quality beef hot dog with mustard and onions',
+      price: 15.99,
+      photo: 'assets/hotdog.jpeg',
       type: 'Main Dish'
     }
   ];

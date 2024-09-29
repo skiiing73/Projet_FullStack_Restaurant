@@ -1,0 +1,25 @@
+/* dish-list.component.css */
+.dish-list-container {
+    background-color: rgb(127, 255, 240);
+    max-height: 800px; /* Set the max height for mobile, adjust as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-top: 20%;
+    border-radius: 3%;
+  }
+  
+  
+  /* Styling the scrollbar */
+.dish-list-container::-webkit-scrollbar {
+    width: 8px;
+    scroll-behavior: smooth;
+}
+  
+  .dish-list-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Lightly visible thumb */
+    border-radius: 4px;
+}
+  
+  .dish-list-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+  

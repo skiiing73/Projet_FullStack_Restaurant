@@ -3,6 +3,9 @@
     padding: 15px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px; 
+    background-color: white; 
+    margin: 20px;
   }
   
   .badge {
@@ -17,6 +20,7 @@
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
+    text-align: center;
   }
   
   .dish-card p {
@@ -25,7 +29,36 @@
   }
   
   .dish-card button {
+    
     background-color: #6c63ff;
     color: white;
   }
+  .img-fluid{
+    display:block;
+    margin:auto;
+    max-width: 190px;
+    min-width: 190px;
+  }
+  
+            
+  .btn_cart {
+    background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    margin-left:20%;
+  }
+
+  .btn_cart:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+   
   

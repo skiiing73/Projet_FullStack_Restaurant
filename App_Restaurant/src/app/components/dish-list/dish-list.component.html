@@ -1,4 +1,6 @@
-<div class="dishes-container">
-    <app-dish *ngFor="let dish of dishes" [dish]="dish"></app-dish>
-</div>
+<div class="dish-list-container">
+    <div *ngFor="let dish of dishes">
+      <app-dish [dish]="dish"></app-dish>
+    </div>
+  </div>
   
