@@ -1,0 +1,34 @@
+<header class="fixed-header">
+    <div class="header-left">
+        <button class="menu-btn" (click)="toggleMenu()">
+            <img src="./assets/menu.png" alt="Profile" class="menu-pic">
+          </button>
+      
+          <div class="menu-options" [class.show]="menuOpen">
+            <ul>
+              <li><a routerLink="/">Home</a></li>
+              <li><a routerLink="/starters">Starters</a></li>
+              <li><a routerLink="/main-dishes">Main Dishes</a></li>
+              <li><a routerLink="/desserts">Desserts</a></li>
+              <li><a routerLink="/profile">Profile</a></li>
+            </ul>
+          </div>
+      
+    </div>
+  
+    <div class="header-center">
+      <h1>{{ restaurantName }}</h1> <!-- Restaurant name in the center -->
+    </div>
+  
+    <div class="header-right">
+      
+        <button class="cart-btn" (click)="goToCart()">
+            <img src="./assets/cart.png" alt="Profile" class="cart-pic">
+        </button>
+
+        <button class="profile-btn" (click)="goToProfile()">
+        <img src="{{ profilePhoto }}" alt="Profile" class="profile-pic">
+        </button>
+    </div>
+</header>
+  
