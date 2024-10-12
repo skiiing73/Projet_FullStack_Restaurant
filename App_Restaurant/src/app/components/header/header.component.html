@@ -6,13 +6,16 @@
       
           <div class="menu-options" [class.show]="menuOpen">
             <ul>
-              <li><a routerLink="/">Home</a></li>
+             
               <li><a routerLink="/starters">Starters</a></li>
               <li><a routerLink="/main-dishes">Main Dishes</a></li>
               <li><a routerLink="/desserts">Desserts</a></li>
-              <li><a routerLink="/profile">Profile</a></li>
+              <li><a routerLink="/about" routerLinkActive="active">About us</a></li>
             </ul>
           </div>
+          <button class="home-btn" (click)="goToHome()">
+            <img src="./assets/home.png" alt="Home" class="home-pic">
+          </button>
       
     </div>
   
@@ -30,5 +33,5 @@
         <img src="{{ profilePhoto }}" alt="Profile" class="profile-pic">
         </button>
     </div>
+    
 </header>
-  

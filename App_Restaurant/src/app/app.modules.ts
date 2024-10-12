@@ -7,15 +7,17 @@ import { DishListComponent } from './components/dish-list/dish-list.component'; 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DishComponent, // Declare the DishComponent
-    DishListComponent // Declare the DishListComponent
+    
   ],
   imports: [
+    AppComponent,
+    DishComponent, // Declare the DishComponent
+    DishListComponent, // Declare the DishListComponent
     BrowserModule,
-    RouterModule // Include RouterModule here
+    RouterModule, 
+   
+   
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: []
 })
 export class AppModule { }

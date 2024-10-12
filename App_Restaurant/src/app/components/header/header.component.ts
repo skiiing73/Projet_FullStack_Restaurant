@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'; // Import the router to navigate between pages
-
+import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  standalone: true // This ensures the component is standalone
+  standalone: true,
+  imports:[RouterOutlet,RouterModule]
 })
 export class HeaderComponent {
   // Properties for the header
@@ -18,14 +20,17 @@ export class HeaderComponent {
 
   // Method to navigate to the cart page
   goToCart() {
-    this.router.navigate(['/cart']); // Adjust the route as per your routing setup
+    this.router.navigate(['/cart']); 
   }
 
   // Method to navigate to the profile page
   goToProfile() {
-    this.router.navigate(['/profile']); // Adjust the route as per your routing setup
+    this.router.navigate(['/profile']); 
   }
-
+  // Method to navigate to the Home page
+  goToHome() {
+    this.router.navigate(['/dishes']); 
+  }
   // Method to toggle the dropdown menu
   toggleMenu() {
     this.menuOpen = !this.menuOpen; // Toggle the boolean to show/hide the menu
