@@ -1,9 +1,11 @@
 /* Header Styles */
-.fixed-header {
+.top-fixed-header {
+
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    max-width: 430px;
     height: 60px;
     background-color: #007bff;
     color: white;
@@ -88,7 +90,7 @@
   .menu-options {
     position: absolute;
     top: 60px;
-    left: 10px;
+    padding-left:0;
     background-color: white;
     color: black;
     border-radius: 5px;
@@ -125,4 +127,3 @@
   body {
     padding-top: 60px; /* Adjust according to the height of the header */
   }
-  

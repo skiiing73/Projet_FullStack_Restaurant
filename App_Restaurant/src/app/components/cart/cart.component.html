@@ -17,8 +17,8 @@
           <h4>{{ item.name }}</h4>
           <p>Price: ${{ item.price }}</p>
           <p>Quantity: {{ item.quantity }}</p>
-          <button class="remove-btn" (click)="removeFromCart(item.id)">Remove</button>
-          <button class="add-btn" (click)="addAgainToCart(item.id)">Add More</button>
+          <button class="remove-btn" (click)="removeFromCart(item.id)">-</button>
+          <button class="add-btn" (click)="addAgainToCart(item.id)">+</button>
         </div>
       </div>
   

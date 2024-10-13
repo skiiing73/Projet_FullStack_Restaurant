@@ -30,7 +30,7 @@ export class CartComponent {
   addAgainToCart(ItemId:number){
     this.cartService.addAgainToCart(ItemId);
     this.cartItems=this.cartService.getCartItems();
-    
+  
   }
   removeFromCart(itemId: number) {
     this.cartService.removeFromCart(itemId);

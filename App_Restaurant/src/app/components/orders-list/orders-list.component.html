@@ -1,0 +1,19 @@
+<div class="orders-list-container">
+    
+    <div *ngFor="let orderGroup of orders" class="order-group">
+      <h3>Order #{{ orders.indexOf(orderGroup) + 1 }}</h3>
+      
+      <div class="order-items">
+        <div *ngFor="let order of orderGroup" class="order-item">
+          <img [src]="order.photo" alt="{{ order.name }}" class="order-photo">
+          <div class="order-details">
+            <h4>{{ order.name }}</h4>
+            <p><strong>Type:</strong> {{ order.type }}</p>
+            <p><strong>Price:</strong> {{ order.price | currency }}</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  

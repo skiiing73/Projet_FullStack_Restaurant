@@ -1,4 +1,4 @@
-<header class="fixed-header">
+<header class="top-fixed-header">
     <div class="header-left">
         <button class="menu-btn" (click)="toggleMenu()">
             <img src="./assets/menu.png" alt="Profile" class="menu-pic">
@@ -6,11 +6,8 @@
       
           <div class="menu-options" [class.show]="menuOpen">
             <ul>
-             
-              <li><a routerLink="/starters">Starters</a></li>
-              <li><a routerLink="/main-dishes">Main Dishes</a></li>
-              <li><a routerLink="/desserts">Desserts</a></li>
               <li><a routerLink="/about" routerLinkActive="active">About us</a></li>
+              <li><a routerLink="/" routerLinkActive="active">Déconnexion</a></li>
             </ul>
           </div>
           <button class="home-btn" (click)="goToHome()">
@@ -35,3 +32,4 @@
     </div>
     
 </header>
+
