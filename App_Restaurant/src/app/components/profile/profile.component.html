@@ -4,13 +4,22 @@
         <img class="profile-pic" [src]="user.profilePhoto" alt="Profile Photo">
         <h2>{{ user.name }}</h2>
         <p>Joined {{ user.joinDate }}</p>
+        <h3>Personal Information</h3>
       </div>
   
       <div class="profile-details">
-        <h3>Personal Information</h3>
+        
         <p><strong>Email:</strong> {{ user.email }}</p>
         <p><strong>Phone:</strong> {{ user.phone }}</p>
-        <p><strong>Address:</strong> {{ user.address }}</p>
+        <p>
+          <strong>Password:</strong>
+          <input
+              [type]="showPassword ? 'text' : 'password'"
+              [value]="user.password"
+              readonly
+          />
+          <button (click)="togglePassword()">{{ showPassword ? 'Hide' : 'Show' }}</button>
+        </p>
       </div>
   
       <div class="profile-actions">

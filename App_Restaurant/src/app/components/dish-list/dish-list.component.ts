@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
 import { DishComponent } from '../dish/dish.component';
 import { RouterLink } from '@angular/router';
 import { RouterLinkActive } from '@angular/router';
+
 @Component({
   selector: 'app-dish-list',
   templateUrl: './dish-list.component.html',

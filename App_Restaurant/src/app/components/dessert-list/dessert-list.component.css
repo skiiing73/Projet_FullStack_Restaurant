@@ -1,6 +1,5 @@
 /* dish-list.component.css */
 .dessert-list-container {
-    background-color: rgb(167, 167, 167);
     max-height: 83vh; /* Set the max height for mobile, adjust as needed */
     overflow-y: auto; /* Enable vertical scrolling */
     margin-top: 20%;
@@ -32,8 +31,8 @@
   width: 100%;
   max-width: 430px;
   height: 60px;
-  background-color: #007bff;
-  color: white;
+  background: linear-gradient(to top, #32ff5e 85%, #d2d2d2);
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,12 +54,12 @@
 
 .dish-options ul li a {
   text-decoration: none;
-  color: white; 
+  color: black; 
   font-weight: bold;
   font-size:18px;
   padding: 10px 10px;
 }
 
 .dish-options ul li a.active {
-  border-bottom: 2px solid white; /* Add underline for the active item */
+  border-bottom: 2px solid black; /* Add underline for the active item */
 }

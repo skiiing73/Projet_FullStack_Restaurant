@@ -27,15 +27,30 @@
     margin-bottom: 10px;
   }
   
-  .profile-details {
-    margin-bottom: 20px;
-  }
-  
-  .profile-details h3 {
+  .profile-header h3 {
     margin-bottom: 10px;
     color: #333;
   }
+  .profile-details {
+    margin-bottom: 20px;
+    text-align: left;
+  }
   
+  .profile-details input[type="password"],
+  .profile-details input[type="text"] {
+      border: none; 
+      outline: none;
+  }
+  
+  .profile-details button {
+      margin-left: 5px; 
+      cursor: pointer;
+      background-color: #32ff5e; 
+      color: white; 
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+  }
   .profile-details p {
     font-size: 14px;
     color: #555;
@@ -47,7 +62,7 @@
   }
   
   .edit-btn {
-    background-color: #007bff;
+    background-color: #32ff5e;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -80,3 +95,6 @@
   .order-option:not(.show) {
     display: none;
   }
+  
+
+  

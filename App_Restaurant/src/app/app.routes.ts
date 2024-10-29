@@ -6,16 +6,20 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AboutComponent } from './components/about/about.component';
 import { StarterListComponent } from './components/starter-list/starter-list.component';
 import { DessertListComponent } from './components/dessert-list/dessert-list.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './auth.guard'; // Import the AuthGuard
+import { SigninComponent } from './components/signin/signin.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dishes', pathMatch: 'full' },
-  { path: 'dishes', component: DishListComponent }, // Route for the dish list
-  { path: 'starters', component: StarterListComponent}, // Route for the dish list
-  { path: 'desserts', component: DessertListComponent}, // Route for the dish list
-  { path: 'cart', component: CartComponent }, // Route for the cart page
-  { path: 'profile', component: ProfileComponent }, // Route for the profile page
-  { path: 'about', component: AboutComponent }, // Route for the profile page
-  
+  { path: 'login', component: LoginComponent }, // Login page
+  { path: 'register', component: SigninComponent }, // Sginin page
+  { path: 'dishes', component: DishListComponent, canActivate: [AuthGuard] }, // Protected route
+  { path: 'starters', component: StarterListComponent, canActivate: [AuthGuard] }, // Protected route
+  { path: 'desserts', component: DessertListComponent, canActivate: [AuthGuard] }, // Protected route
+  { path: 'cart', component: CartComponent, canActivate: [AuthGuard] }, // Protected route
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] }, // Protected route
+  { path: 'about', component: AboutComponent, canActivate: [AuthGuard] }, // Protected route
 ];
 
 @NgModule({

@@ -11,15 +11,21 @@ import { OrdersListComponent } from "../orders-list/orders-list.component";
 export class ProfileComponent {
   ordersOpen: boolean=false;
   ordersText: String ="See my Orders"
+  showPassword: boolean = false; // To track password visibility
+  
   user = {
     name: 'John Doe',
     email: 'john.doe@example.com',
     phone: '+1 234 567 890',
-    address: '1234 Elm Street, Some City, Some Country',
     profilePhoto: './assets/profile.jpeg',
+    password:'test123',
     joinDate: 'January 2023'
   };
+  
 
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+  }
   editProfile() {
     //add if we want
   }
