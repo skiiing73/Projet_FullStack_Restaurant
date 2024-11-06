@@ -19,11 +19,19 @@
   .dish-card h5 {
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-top: 10px;
     text-align: center;
+    
   }
   
+  .btn_price{
+    
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .dish-card p {
+    margin:15px 0;
     font-size: 14px;
     color: #666;
   }
@@ -41,27 +49,35 @@
     min-width: 190px;
     max-height: 150px;
     min-height: 150px;
+    border-radius: 8px;
   }
   
             
   .btn_cart {
-    background-image: linear-gradient(to right, #32ff5e 0%, #58fd7c  51%, #8bfda4  100%);
-    margin: 10px;
-    padding: 15px 45px;
-    text-align: center;
+    background-image: linear-gradient(to right, #28c049 0%, #31e158  100%);
+    
+    padding: 10px 20px;
+    display :flex;
+    justify-content: center;
+    align-items: center;
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 200% auto;
     color: black;            
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
-    margin-left:20%;
+    
   }
-
+  
   .btn_cart:hover {
     background-position: right center; /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
+  }
+  .cart-pic{
+    width: 20px;
+    height: 20px;
+    margin-left :.5rem;
   }
    
   

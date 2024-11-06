@@ -24,15 +24,20 @@ export class SigninComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onSignin(): void {
+    // Check if password and confirm password match
+    if (this.password !== this.confirmpassword) {
+      this.errorMessage = 'Passwords do not match!';
+      return; // Stop form submission if passwords don't match
+    }
+    if(this.mail !=="" && this.phone !=="" && this.username !="" && this.password !=""){
       this.router.navigate(['/dishes']); // Redirect to the dishes page after successful signin
       this.authService.signin(this.username,this.mail,this.phone,this.password,)
       // Reset error message
       this.errorMessage = null;
-
-      // Check if password and confirm password match
-      if (this.password !== this.confirmpassword) {
-        this.errorMessage = 'Passwords do not match!';
-        return; // Stop form submission if passwords don't match
-      }
+      return
+    }
+    this.errorMessage = 'Fill everything!';
+    return
+      
   }
 }

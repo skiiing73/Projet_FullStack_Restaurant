@@ -4,6 +4,8 @@ import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { CartService } from '../../services/cart.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -16,9 +18,24 @@ export class HeaderComponent {
   profilePhoto: string = './assets/profile.jpeg';
   menuOpen: boolean = false;
   isAuthenticated: boolean = false; // Track authentication status
+  nb_items: number = 0; // Holds the number of items in the cart
+  private cartSubscription!: Subscription;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private cartService: CartService, private router: Router) {}
 
+  ngOnInit() {
+    // Subscribe to cart item count updates
+    this.cartSubscription = this.cartService.cartItemsCount$.subscribe(count => {
+      this.nb_items = count;
+    });
+  }
+
+  ngOnDestroy() {
+    // Unsubscribe to avoid memory leaks
+    if (this.cartSubscription) {
+      this.cartSubscription.unsubscribe();
+    }
+  }
   goToCart() {
     this.router.navigate(['/cart']);
     this.menuOpen = false;

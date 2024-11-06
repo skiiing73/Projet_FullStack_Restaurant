@@ -45,4 +45,7 @@ export class CartComponent {
   checkout() {
     alert('Proceeding to checkout');
   }
+  getCartItemCount(): number {
+    return this.cartItems.length;
+  }
 }

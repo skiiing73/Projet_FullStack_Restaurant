@@ -19,11 +19,15 @@
   </div>
 
   <div class="header-right">
+
     <button class="cart-btn" (click)="goToCart()">
+      <div class="number-items">{{nb_items}} </div>
       <img src="./assets/cart.png" alt="Cart" class="cart-pic">
     </button>
+
     <button class="profile-btn" (click)="goToProfile()">
       <img src="{{ profilePhoto }}" alt="Profile" class="profile-pic">
     </button>
   </div>
 </header>
+<div class="div-align"></div>

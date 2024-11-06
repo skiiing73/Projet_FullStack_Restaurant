@@ -1,4 +1,7 @@
 /* Header Styles */
+.div-align{
+  height: 60px;
+}
 .top-fixed-header {
   position: fixed;
   top: 0;
@@ -6,7 +9,7 @@
   width: 100%;
   max-width: 430px;
   height: 60px;
-  background: linear-gradient(to bottom, #32ff5e 85%, #d2d2d2);
+  background: linear-gradient(to bottom, #28c049 85%, #d2d2d2);
   color: black;
   display: flex;
   justify-content: space-between;
@@ -14,6 +17,7 @@
   padding: 0 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+
 }
 
 /* Left and Right Sections */
@@ -21,24 +25,39 @@
   display: flex;
   align-items: center;
 }
-.header-right{
-  margin-right:  10px;
-}
+
 .menu-btn, .profile-btn, .cart-btn, .home-btn {
   background: none;
   border: none;
-  margin-right: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
 }
+.menu-btn, .cart-btn{
+  margin-right: 10px;
+}
 
+.number-items{
+  position:absolute;
+  top:0;
+  right:0;
+  width:15px;
+  height: 15px;
+  background-color: red;
+  color:white;
+  border-radius: 50%;
+  transform: translate(50%,-50%) ;
+ 
+}
 .menu-pic, .home-pic, .cart-pic {
   width: 35px;
   height: 35px;
   
 }
 
+.cart-btn{
+  position:relative;
+}
 .profile-pic {
   width: 35px;
   height: 35px;
@@ -47,12 +66,6 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.menu-btn:hover .menu-pic,
-.profile-btn:hover .profile-pic,
-.cart-btn:hover .cart-pic,
-.home-btn:hover .home-pic {
-  transform: scale(1.1);
-}
 
 /* Center Section */
 .header-center h1 {

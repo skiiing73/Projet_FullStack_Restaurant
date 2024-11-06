@@ -1,9 +1,12 @@
+p,h3,h4,button,img{
+    margin:10px 0;
+}
 .cart-container {
     padding: 10px;
     background-color: #f9f9f9;
     border-radius: 8px;
-    max-width: 600px;
-    margin: 0 auto;
+    min-height: 91vh;
+    margin: 10px;
 }
 .title{
     text-align: center;

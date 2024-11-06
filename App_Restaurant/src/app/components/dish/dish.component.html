@@ -4,9 +4,12 @@
     <img [src]="dish.photo" alt="Dish Image" class="img-fluid mb-3">
     <h5>{{ dish.name }}</h5>
     <p>{{ dish.description }}</p>
-    <div class="d-flex justify-content-between align-items-center">
+    <div class="btn_price">
       <strong>{{ dish.price }} $</strong>
-      <button class="btn_cart" (click)="onAddToCart()">Add To Cart</button>
+      <button class="btn_cart" (click)="onAddToCart()">
+        Add To Cart
+        <img src="./assets/cart.png" alt="Cart" class="cart-pic">
+      </button>
     </div>
   </div>
 </div>

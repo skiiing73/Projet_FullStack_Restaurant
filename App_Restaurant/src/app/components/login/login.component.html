@@ -1,4 +1,4 @@
-<div class="login-container">
+
   <div class="background-overlay">
     <div class="restaurant-name">Amazing Restaurant</div>
     <div class="login-box">
@@ -12,14 +12,14 @@
           <label for="password" class="label">Password</label>
           <div class="password_input">
             <input
-            [type]="showPassword ? 'text' : 'password'"
+            [type]="showPassword ? 'text_password' : 'password'"
             id="password"
             [(ngModel)]="password"
             name="password"
             required>
-          <button type="button" (click)="togglePasswordVisibility()" class="show-password-btn">
-            {{ showPassword ? 'Hide' : 'Show' }}
-          </button>
+            <button type="button" (click)="togglePasswordVisibility()" class="show-password-btn">
+              <img class="show-pic" [src]="showPassword ? './assets/eye-slash.svg' : './assets/eye.svg'" >
+            </button>
           </div>
           
         </div>
@@ -29,4 +29,4 @@
       <p class="register-link">Don't have an account? <a routerLink="/register" routerLinkActive="active">Sign up here</a></p>
     </div>
   </div>
-</div>
+

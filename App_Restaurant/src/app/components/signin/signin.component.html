@@ -24,7 +24,7 @@
             <label for="confirmpassword">Confirm Password</label>
             <input type="password" id="confirmpassword" [(ngModel)]="confirmpassword" name="confirmpassword" required>
           </div>
-          <div *ngIf="errorMessage" class="error" style="color:red">{{ errorMessage }}</div>
+          <div *ngIf="errorMessage" class="error" style="color:red; margin-bottom:10px">{{ errorMessage }}</div>
           <button type="submit" class="signin-btn">Sign In</button>
         </form>
         <p class="login-link">Already have an account? <a routerLink="/login">Log in here</a></p>

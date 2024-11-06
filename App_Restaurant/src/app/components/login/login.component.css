@@ -1,29 +1,17 @@
-html, body {
-  height: 100%; /* Ensure the body fills the full height */
-  overflow: hidden; /* Prevent scrolling */
-}
+
 
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f4;
 }
 
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 .background-overlay {
   background-image: url('/assets/login_photo.jpg');
   background-size: cover;
   background-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position:relative;
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,11 +24,6 @@ body {
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
@@ -54,7 +37,7 @@ body {
 
 h2 {
   text-align: center;
-  color: #32ff5e;
+  color: #28c049;
   margin-bottom: 20px;
 }
 
@@ -67,23 +50,32 @@ h2 {
   color: #555;
 }
 
-input[type="text"],
-input[type="password"] {
-  width: 90%;
+input[type="text"]{
+  width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 14px;
+  height:37px
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
-  border-color: #32ff5e;
+
+input[type="password"],
+input[type="text_password"] {
+  width: 90%;
+  border:none;
   outline: none;
+  font-size: 14px;
 }
 
 .password_input{
   display :flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  height:37px;
+  border-radius: 5px;
 }
 .show-password-btn {
   background: none;
@@ -94,9 +86,14 @@ input[type="password"]:focus {
   padding: 0;
   margin-left: 8px;
 }
+.show-pic{
+  margin-top:2px ;
+  width: 20px;
+  height: 20px;
 
+}
 .login-btn {
-  background-color: #32ff5e;
+  background-color: #28c049;
   color: white;
   padding: 10px;
   border: none;
@@ -117,7 +114,7 @@ input[type="password"]:focus {
 }
 
 .register-link a {
-  color: #32ff5e;
+  color: #28c049;
   text-decoration: none;
 }
 

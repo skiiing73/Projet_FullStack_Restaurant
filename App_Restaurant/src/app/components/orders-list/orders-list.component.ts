@@ -1,39 +1,25 @@
 import { Component } from '@angular/core';
+import { OrderComponent } from "../order/order.component";
+import { Dish } from '../../../dish';
+import { Order } from '../../../order';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-orders-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [OrderComponent,CommonModule],
   templateUrl: './orders-list.component.html',
-  styleUrl: './orders-list.component.css'
+  styleUrls: ['./orders-list.component.css']
 })
 export class OrdersListComponent {
-//a remplacer quand on aura api
-orders = [
-  [
-  {
-    id: 1,
-    name: 'The Lovely Burger',
-    price: 19.99,
-    photo: 'assets/burger.jpeg',
-    type: 'Main Dish'
-  },
-  {
-    id: 2,
-    name: 'American HOT DOG',
-    price: 15.99,
-    photo: 'assets/hotdog.jpeg',
-    type: 'Main Dish'
-  },
-  ],
-  [
-    {
-      id: 1,
-      name: 'The Lovely Burger',
-      price: 19.99,
-      photo: 'assets/burger.jpeg',
-      type: 'Main Dish'
-    },
-    ]
-];
+
+  // Sample orders data, each order is a list of dishes
+  orders: Order[] = [
+    new Order([
+      new Dish(1, 'The Lovely Burger', 19.99, 'Main Dish', 'assets/burger.jpeg', 'A delicious burger'),
+      new Dish(2, 'American HOT DOG', 15.99, 'Main Dish', 'assets/hotdog.jpeg', 'Classic American hot dog')
+    ]),
+    new Order([
+      new Dish(1, 'The Lovely Burger', 19.99, 'Main Dish', 'assets/burger.jpeg', 'A delicious burger')
+    ])
+  ];
 }

@@ -1,0 +1,13 @@
+<h3>Order Details</h3>
+<div *ngFor="let dish of order.dishes" class="order-item">
+  <img [src]="dish.photo" alt="{{ dish.name }}" class="order-photo">
+  <div class="order-details">
+    <h4>{{ dish.name }}</h4>
+    <p><strong>Type:</strong> {{ dish.type }}</p>
+    <p><strong>Price:</strong> {{ dish.price | currency }}</p>
+  </div>
+</div>
+<button class="btn_cart" (click)="onAddToCart()">
+  Order Again
+  <img src="./assets/cart.png" alt="Cart" class="cart-pic">
+</button>

@@ -1,12 +1,4 @@
 
-html, body {
-    height: 100%; /* Ensure the body fills the full height */
-    overflow: hidden; /* Prevent scrolling */
-  }
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f4; /* Couleur de fond générale */
-    }
     
     .signin-container {
       display: flex;
@@ -41,7 +33,7 @@ html, body {
     
     h2 {
       text-align: center;
-      color: #32ff5e; /* Couleur du texte */
+      color: #28c049; /* Couleur du texte */
       margin-bottom: 20px;
     }
     
@@ -56,7 +48,7 @@ html, body {
     
     input[type="text"],
     input[type="password"] {
-      width: 90%;
+      width: 100%;
       padding: 10px;
       border: 1px solid #ddd;
       border-radius: 5px;
@@ -65,12 +57,12 @@ html, body {
     
     input[type="text"]:focus,
     input[type="password"]:focus {
-      border-color: #32ff5e; /* Couleur de la bordure au focus */
+      border-color: #28c049; /* Couleur de la bordure au focus */
       outline: none;
     }
     
     .signin-btn {
-      background-color: #32ff5e; /* Couleur du bouton */
+      background-color: #28c049; /* Couleur du bouton */
       color: white; /* Couleur du texte du bouton */
       padding: 10px;
       border: none;
@@ -91,7 +83,7 @@ html, body {
     }
     
     .login-link a {
-      color: #32ff5e; /* Couleur du lien */
+      color: #28c049; /* Couleur du lien */
       text-decoration: none;
     }
     
