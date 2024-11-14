@@ -63,19 +63,14 @@ export async function updateUser(req, res) {
 
 // Fonction pour rechercher un utilisateur par nom d'utilisateur
 export async function getUser(req, res) {
-    // const { username } = req.params;
-    console.log("HEEEEERE")
+    const { username } = req.params;
     try {
-        const user = await User.find();
-        console.log("HEEEEERE2")
+        const user = await User.find({username});
         if (!user) {
-            console.log("HEEEEERE3")
             return res.status(404).json({ message: 'Utilisateur non trouvé' });
         }
-        console.log(user)
         res.status(200).json(user);
     } catch (error) {
-        console.log("HEEEEERE4")
         res.status(500).json({ message: 'Erreur lors de la recherche de l\'utilisateur', error: error.message });
     }
 }
