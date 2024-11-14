@@ -5,37 +5,34 @@ const { MongoClient, ObjectId } = require('mongodb');
 const bodyParser = require('body-parser');
 const path = require('path');
 
+// Import des routes
+const dishRoutes = require('./routes/dishRoutes');
+const userRoutes = require('./routes/userRoutes');
+
 const app = express();
 const port = 3000;
-
 
 // MongoDB URI with authentication
 const uri = `mongodb://${user}:${password}@${address}:27017/?authMechanism=DEFAULT&authSource=admin`;
 
-// Initialize MongoDB client
-const client = new MongoClient(uri);
-
-// Database and collection variables
-let messagesCollection;
-
-// Connect to MongoDB
-async function connectToMongo() {
-    try {
-        await client.connect();
-        console.log('Connected to MongoDB');
-        db = client.db('borne_restaurant'); // Use your desired database
-    } catch (err) {
-        console.error('Failed to connect to MongoDB', err);
-    }
-}
-
-connectToMongo();
-
 // Middleware
-app.use(bodyParser.urlencoded({ extended: true })); // Parse form data
-// Use the express.json() middleware to parse JSON request bodies
-app.use(express.json());
-app.use(express.static('public')); // Serve static files
+app.use(cors());
+app.use(bodyParser.json());
+
+// Connexion à MongoDB
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.error('Could not connect to MongoDB', err));
+
+// Utilisation des routes
+app.use('/dish', dishRoutes);
+app.use('/user', userRoutes);
+
+
+
+
+
+
 
 // Routes
 // http://localhost:3000/add_message?message=bonjour+thomas
@@ -61,6 +58,11 @@ app.post('/add_dish', async (req, res) => {
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
+
+
+
+
 
 
 // Start the server
