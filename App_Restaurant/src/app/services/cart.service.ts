@@ -12,7 +12,7 @@ export class CartService {
 
   addToCart(dish: { id: number, name: string, price: number, photo: string }) {
     const itemIndex = this.cartItems.findIndex(item => item.id === dish.id);
-
+    console.log(dish.id)
     if (itemIndex !== -1) {
       // If item already exists in cart, increase quantity
       this.cartItems[itemIndex].quantity++;
