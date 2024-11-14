@@ -40,16 +40,40 @@ export async function login(req, res) {
     }
 }
 
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
+import validator from 'validator';
+
 // Fonction pour mettre à jour un utilisateur
 export async function updateUser(req, res) {
     const { username } = req.params;
     const newData = req.body;
 
     try {
+        // Normalisation du numéro de téléphone, si présent
+        if (newData.phone) {
+            const phoneNumber = parsePhoneNumberFromString(newData.phone, 'FR'); // 'FR' pour la France, adapte selon le pays
+            if (phoneNumber && phoneNumber.isValid()) {
+                newData.phone = phoneNumber.format('E.164'); // Formate le numéro en E.164, un format international standard
+            } else {
+                return res.status(400).json({ message: 'Numéro de téléphone invalide' });
+            }
+        }
+
+        // Normalisation de l'email, si présent
+        if (newData.email) {
+            // Mettre l'email en minuscule pour la normalisation
+            newData.email = newData.email.toLowerCase();
+            // Valider l'email
+            if (!validator.isEmail(newData.email)) {
+                return res.status(400).json({ message: 'Email invalide' });
+            }
+        }
+
+        // Hachage du mot de passe, si présent
         if (newData.password) {
             newData.password = await bcrypt.hash(newData.password, 10); // Hachage du nouveau mot de passe
         }
-        
+
         const result = await User.updateOne({ username }, { $set: newData });
         if (result.modifiedCount === 0) {
             return res.status(404).json({ message: 'Utilisateur non trouvé ou aucune mise à jour effectuée' });
