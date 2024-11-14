@@ -1,5 +1,5 @@
 // Import MongoDB credentials
-import { user, password, address } from './config.js';
+import { user, password, address } from '../config.js';
 
 // Import necessary modules with ES syntax
 import express from 'express';
