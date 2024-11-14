@@ -15,8 +15,8 @@ export class ProfileComponent implements OnInit {
   ordersText = "See my Orders";
   showPassword = false;
   editOpen = false;
-  
-  user: any = {}; // Replace with actual user data from API
+
+  user: any = {}; // The user data that will be updated
 
   constructor(private userService: UserService) {}
 
@@ -42,5 +42,18 @@ export class ProfileComponent implements OnInit {
   seeOrders() {
     this.ordersOpen = !this.ordersOpen;
     this.ordersText = this.ordersOpen ? "Hide my Orders" : "See my Orders";
+  }
+
+  // Handle the profile edit completion
+  onEditComplete() {
+    this.editOpen = false; // Close the edit form when update is complete
+    this.userService.getUserData().subscribe(
+      data => {
+        this.user = data; // Reload the updated user data
+      },
+      error => {
+        console.error('Error fetching updated user data', error);
+      }
+    );
   }
 }

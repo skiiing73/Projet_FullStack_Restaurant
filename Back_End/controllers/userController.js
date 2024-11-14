@@ -65,7 +65,7 @@ export async function updateUser(req, res) {
 export async function getUser(req, res) {
     const { username } = req.params;
     try {
-        const user = await User.find({username});
+        const user = await User.findOne({username});
         if (!user) {
             return res.status(404).json({ message: 'Utilisateur non trouvé' });
         }

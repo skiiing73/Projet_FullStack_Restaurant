@@ -18,6 +18,7 @@ export class AuthService {
     localStorage.setItem('isAuthenticated', 'true');
     if (this.http.post(this.apiUrllogin, body)){
       localStorage.setItem('isAuthenticated', 'true');
+      localStorage.setItem('username', username);
       return true;
     }; 
     return false;
