@@ -4,15 +4,15 @@ import { createDish, getDishes, updateDish, deleteDish } from '../controllers/di
 const router = express.Router();
 
 // Route pour ajouter un plat
-router.post('/', createDish);
+router.post('/createDish', createDish);
 
 // Route pour récupérer tous les plats
-router.get('/', getDishes);
+router.get('/getDishes', getDishes);
 
 // Route pour mettre à jour un plat par ID
-router.put('/:id', updateDish);
+router.put('/updateDish/:id', updateDish);
 
 // Route pour supprimer un plat par ID
-router.delete('/:id', deleteDish);
+router.delete('/deleteDish/:id', deleteDish);
 
 export default router;
