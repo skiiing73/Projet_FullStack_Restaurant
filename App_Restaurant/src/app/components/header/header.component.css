@@ -59,11 +59,11 @@
   position:relative;
 }
 .profile-pic {
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%; /* Arrondi uniquement pour la photo de profil */
   object-fit: cover;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  
 }
 
 

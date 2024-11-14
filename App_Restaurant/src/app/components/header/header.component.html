@@ -5,7 +5,8 @@
     </button>
     <div class="menu-options" [class.show]="menuOpen">
       <ul>
-        <li><a routerLink="/about" routerLinkActive="active">About us</a></li>
+        <li><a (click)="goToAbout()">About us</a></li>
+        <li><a (click)="goToContact()" >Contact us</a></li>
         <li><a (click)="logout()" >Logout</a></li>
       </ul>
     </div>

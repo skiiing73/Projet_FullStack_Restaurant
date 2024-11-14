@@ -24,7 +24,10 @@
   
       <div class="cart-total">
         <h3>Total: ${{ getTotalPrice() }}</h3>
-        <button class="checkout-btn" (click)="checkout()">Checkout</button>
+        <button class="checkout-btn" (click)="checkout()">
+          Checkout
+          <img src="./assets/dollar-pic.png" alt="Cart" class="dollar-pic">
+        </button>
       </div>
       <div class="empty-cart">
         <h3>Something is missing ?</h3>

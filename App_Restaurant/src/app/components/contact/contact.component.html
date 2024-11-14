@@ -1,0 +1,14 @@
+<div class="main-container">
+    <h1> Contactez Nous !!</h1>
+    <p> Un problème, une suggestion n'hésitez pas à nous envoyer un message nous tiendrons comptre de vos remarques !</p>
+    <div class="container">
+    
+        <h2>Envoyer un Message</h2>
+        <form (ngSubmit)="sendMessage()" #messageForm="ngForm">
+            <input type="text" [(ngModel)]="name" name="name" placeholder="Votre nom" required>
+            <textarea [(ngModel)]="message" name="message" placeholder="Votre message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+        <p>{{ status }}</p>
+    </div>
+</div>

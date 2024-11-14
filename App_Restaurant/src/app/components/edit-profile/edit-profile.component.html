@@ -1,0 +1,18 @@
+<div class="edit-box">
+    <h2>Edit your Info</h2>
+    <form (submit)="editProfile()">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" [(ngModel)]="user.username" name="username" required>
+      </div>
+      <div class="input-group">
+        <label for="mail">Mail</label>
+        <input type="text" id="mail" [(ngModel)]="user.mail" name="mail" required>
+      </div>
+      <div class="input-group">
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" [(ngModel)]="user.phone" name="phone" required>
+      </div>
+      <button type="submit" class="edit-btn">Submit</button>
+    </form>
+</div>

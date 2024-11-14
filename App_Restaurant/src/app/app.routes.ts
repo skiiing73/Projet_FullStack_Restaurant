@@ -9,6 +9,7 @@ import { DessertListComponent } from './components/dessert-list/dessert-list.com
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './auth.guard'; // Import the AuthGuard
 import { SigninComponent } from './components/signin/signin.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dishes', pathMatch: 'full' },
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'cart', component: CartComponent, canActivate: [AuthGuard] }, // Protected route
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] }, // Protected route
   { path: 'about', component: AboutComponent, canActivate: [AuthGuard] }, // Protected route
+  { path: 'contact', component: ContactComponent, canActivate: [AuthGuard] }, // Protected route
 ];
 
 @NgModule({

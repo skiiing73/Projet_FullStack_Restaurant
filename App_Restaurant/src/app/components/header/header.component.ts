@@ -15,7 +15,7 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent {
   restaurantName: string = 'Amazing Restaurant';
-  profilePhoto: string = './assets/profile.jpeg';
+  profilePhoto: string = './assets/profile.png';
   menuOpen: boolean = false;
   isAuthenticated: boolean = false; // Track authentication status
   nb_items: number = 0; // Holds the number of items in the cart
@@ -55,10 +55,20 @@ export class HeaderComponent {
     this.menuOpen = !this.menuOpen;
   }
 
+  goToAbout(){
+    this.router.navigate(['/about']);
+    this.menuOpen = false;
+  }
+
+  goToContact(){
+    this.router.navigate(['/contact']);
+    this.menuOpen = false;
+  }
   login() {
     // Logic to authenticate user (e.g., call a login service)
     this.isAuthenticated = true; 
   }
+
 
   logout() {
     // Logic to log out user (e.g., call a logout service)
