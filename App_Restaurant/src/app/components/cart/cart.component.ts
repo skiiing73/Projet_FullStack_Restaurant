@@ -16,6 +16,7 @@ import confetti from 'canvas-confetti';
 export class CartComponent {
   
   cartItems: any[] = [];
+  cartsubmit:boolean =false;
   constructor(private router: Router, private cartService : CartService) {}
  
   ngOnInit() {
@@ -43,7 +44,7 @@ export class CartComponent {
     this.router.navigate(['/dishes']);
   }
 
-  // Proceed to checkout (this could be a separate process)
+
   checkout() {
     confetti({
       particleCount: 100, 
@@ -51,6 +52,12 @@ export class CartComponent {
       origin: { y: 0.6 }
     });
     alert('Proceeding to checkout');
-
+    this.cartService.removeAllFromCart();
+    this.cartItems = this.cartService.getCartItems();
+    this.cartsubmit=true;
+    setTimeout(() => {
+      this.cartsubmit=false;
+    }, 7000);
+    
   }
 }

@@ -51,7 +51,10 @@ export class CartService {
     
     this.cartItemsCount.next(this.getCartItemCount());
   }
-
+  removeAllFromCart() {
+    this.cartItems=[]
+    this.cartItemsCount.next(this.getCartItemCount());
+  }
   getTotalPrice(): number {
     return Math.round(this.cartItems.reduce((total, item) => total + (item.price * item.quantity), 0) * 100) / 100;
   }

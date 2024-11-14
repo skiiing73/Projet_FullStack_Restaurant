@@ -4,12 +4,18 @@
         <h2>Your Cart</h2>
     </div>
     
-    <div *ngIf="cartItems.length === 0" class="empty-cart">
+    <div *ngIf="cartItems.length === 0 && cartsubmit === false" class="empty-cart">
         <p>Your cart is empty ! Buy something to start a cart.</p>
         <img src="./assets/cart_picture.jpg" alt="cart_picture" class="cart-image">
         <button class="return-home" (click)="goToHome()">Buy Something</button>
     </div>
-    
+
+    <div *ngIf="cartsubmit===true" class="empty-cart">
+      <p>Congratulations you order has been sent !.</p>
+      <img src="./assets/gens-heureux.avif" alt="cart_picture" class="cart-image">
+      <button class="return-home" (click)="goToHome()">Buy Something</button>
+    </div>
+
     <div *ngIf="cartItems.length > 0">
       <div *ngFor="let item of cartItems" class="cart-item">
         <img [src]="item.photo" alt="{{ item.name }}" class="cart-item-image">
