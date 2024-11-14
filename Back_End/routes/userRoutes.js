@@ -13,6 +13,6 @@ router.post('/login', login);
 router.put('/updateUser/:username', updateUser);
 
 // Route pour obtenir un utilisateur par son nom d'utilisateur
-router.get('/getUser', getUser);
+router.get('/getUser/:username', getUser);
 
 export default router;

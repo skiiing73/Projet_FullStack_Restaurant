@@ -3,15 +3,11 @@ import bcrypt from 'bcrypt';
 
 // Fonction pour créer un nouvel utilisateur
 export async function createUser(req, res) {
-    const { username, password } = req.body;
-
-    if (!username || !password) {
-        return res.status(400).json({ message: 'Le nom d\'utilisateur et le mot de passe sont obligatoires' });
-    }
+    const { username, mail, phone, password } = req.body;
 
     try {
         const hashedPassword = await bcrypt.hash(password, 10); // Hachage du mot de passe
-        const newUser = new User({ username, password: hashedPassword });
+        const newUser = new User({ username, password: hashedPassword, mail, phone });
         const savedUser = await newUser.save();
         res.status(201).json({ message: 'Utilisateur créé', user: savedUser });
     } catch (error) {
@@ -49,10 +45,6 @@ export async function updateUser(req, res) {
     const { username } = req.params;
     const newData = req.body;
 
-    if (newData.password && newData.password.length < 6) {
-        return res.status(400).json({ message: 'Le mot de passe doit contenir au moins 6 caractères' });
-    }
-
     try {
         if (newData.password) {
             newData.password = await bcrypt.hash(newData.password, 10); // Hachage du nouveau mot de passe
@@ -71,19 +63,14 @@ export async function updateUser(req, res) {
 
 // Fonction pour rechercher un utilisateur par nom d'utilisateur
 export async function getUser(req, res) {
-    // const { username } = req.params;
-    console.log("HEEEEERE")
+    const { username } = req.params;
     try {
-        const user = await User.find();
-        console.log("HEEEEERE2")
+        const user = await User.find({username});
         if (!user) {
-            console.log("HEEEEERE3")
             return res.status(404).json({ message: 'Utilisateur non trouvé' });
         }
-        console.log(user)
         res.status(200).json(user);
     } catch (error) {
-        console.log("HEEEEERE4")
         res.status(500).json({ message: 'Erreur lors de la recherche de l\'utilisateur', error: error.message });
     }
 }
