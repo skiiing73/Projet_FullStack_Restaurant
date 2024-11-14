@@ -1,0 +1,93 @@
+
+    
+    .signin-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Remplir la hauteur de la fenêtre */
+      
+    }
+    .background-overlay {
+      background-image: url('/assets/login_photo.jpg'); 
+      background-size: cover; /* Cover the entire area */
+      background-position: center; /* Center the image */
+      position: absolute; /* Position overlay absolutely */
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* Stack items vertically */
+    }
+    
+    .signin-box {
+      background-color: white; /* Couleur de fond de la boîte de connexion */
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 300px; /* Largeur de la boîte de connexion */
+      
+    }
+    
+    h2 {
+      text-align: center;
+      color: #28c049; /* Couleur du texte */
+      margin-bottom: 20px;
+    }
+    
+    .input-group {
+      margin-bottom: 15px;
+    }
+    
+    .label {
+      font-size: 14px;
+      color: #555; /* Couleur du texte de l'étiquette */
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #28c049; /* Couleur de la bordure au focus */
+      outline: none;
+    }
+    
+    .signin-btn {
+      background-color: #28c049; /* Couleur du bouton */
+      color: white; /* Couleur du texte du bouton */
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+    
+    .signin-btn:hover {
+      background-color: #28d054; /* Couleur du bouton au survol */
+    }
+    
+    .login-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    
+    .login-link a {
+      color: #28c049; /* Couleur du lien */
+      text-decoration: none;
+    }
+    
+    .login-link a:hover {
+      text-decoration: underline; /* Souligner le lien au survol */
+    }
+    

@@ -1,0 +1,33 @@
+<div class="signin-container">
+    <div class="background-overlay">
+        
+      <div class="signin-box">
+        <h2>Sign-in</h2>
+        <form (submit)="onSignin()">
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" [(ngModel)]="username" name="username" required>
+          </div>
+          <div class="input-group">
+            <label for="mail">Mail</label>
+            <input type="text" id="mail" [(ngModel)]="mail" name="mail" required>
+          </div>
+          <div class="input-group">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" [(ngModel)]="phone" name="phone" required>
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" [(ngModel)]="password" name="password" required>
+          </div>
+          <div class="input-group">
+            <label for="confirmpassword">Confirm Password</label>
+            <input type="password" id="confirmpassword" [(ngModel)]="confirmpassword" name="confirmpassword" required>
+          </div>
+          <div *ngIf="errorMessage" class="error" style="color:red; margin-bottom:10px">{{ errorMessage }}</div>
+          <button type="submit" class="signin-btn">Sign In</button>
+        </form>
+        <p class="login-link">Already have an account? <a routerLink="/login">Log in here</a></p>
+      </div>
+    </div>
+</div>

@@ -1,13 +1,26 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { RouterOutlet } from '@angular/router';
-import { DishListComponent } from './components/dish-list/dish-list.component';
+import { HeaderComponent } from './components/header/header.component';
+
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet,DishListComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  imports: [HeaderComponent, RouterOutlet, CommonModule],
+  standalone: true
 })
 export class AppComponent {
-  title = 'App_Restaurant';
+  showHeader: boolean = true; // Default to show header
+
+  constructor(private router: Router) {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      // Hide header on the login and register page
+      this.showHeader = event.url !== '/login' && event.url !== '/register';
+    });
+  }
 }

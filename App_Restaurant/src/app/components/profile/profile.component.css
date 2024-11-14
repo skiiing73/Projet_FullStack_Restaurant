@@ -1,0 +1,106 @@
+p{
+  margin:20px 0;
+}
+.profile-container {
+  margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:0 30px;
+  }
+  
+  .profile-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .profile-header {
+    margin-bottom: 20px;
+  }
+  
+  .profile-pic {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .profile-header h3 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  .profile-details {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .profile-details input[type="password"],
+  .profile-details input[type="text"] {
+    margin-left:10px;
+      border: none; 
+      outline: none;
+  }
+  
+  .profile-details button {
+      margin-left: 5px; 
+      cursor: pointer;
+      background-color: #28c049; 
+      color: white; 
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+  }
+  .profile-details p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .profile-actions {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .edit-btn {
+    background-color: #28c049;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .edit-btn:hover {
+    background-color: #0056b3;
+  }
+  .orders-btn {
+    background-color: #454647;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left:10px;
+  }
+  
+  
+  /* Order Options (Dropdown) */
+ 
+  .order-option.show {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .order-option:not(.show) {
+    display: none;
+  }
+  
+
+  

@@ -2,20 +2,20 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router'; // Make sure to import RouterModule
 import { AppComponent } from './app.component';
-import { DishComponent } from './components/dish/dish.component'; // Adjust the path as needed
-import { DishListComponent } from './components/dish-list/dish-list.component'; // Adjust the path as needed
+import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { LoginComponent } from './components/login/login.component'; // Import your LoginComponent
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DishComponent, // Declare the DishComponent
-    DishListComponent // Declare the DishListComponent
+    
   ],
   imports: [
+    LoginComponent,
+    AppComponent,
     BrowserModule,
-    RouterModule // Include RouterModule here
+    RouterModule, 
+    FormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: []
 })
 export class AppModule { }

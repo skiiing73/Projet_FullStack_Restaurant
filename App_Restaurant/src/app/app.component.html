@@ -1,2 +1,6 @@
-<router-outlet></router-outlet> <!-- This is where your routed components will appear -->
-<app-dish-list></app-dish-list> <!-- Use DishListComponent directly -->
+
+<div class="main-content">
+    <app-header *ngIf="showHeader"></app-header>
+    <router-outlet></router-outlet>
+</div>
+

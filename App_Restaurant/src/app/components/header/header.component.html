@@ -1,0 +1,33 @@
+<header class="top-fixed-header">
+  <div class="header-left">
+    <button class="menu-btn" (click)="toggleMenu()">
+      <img src="./assets/menu.png" alt="Profile" class="menu-pic">
+    </button>
+    <div class="menu-options" [class.show]="menuOpen">
+      <ul>
+        <li><a routerLink="/about" routerLinkActive="active">About us</a></li>
+        <li><a (click)="logout()" >Logout</a></li>
+      </ul>
+    </div>
+    <button class="home-btn" (click)="goToHome()">
+      <img src="./assets/home.png" alt="Home" class="home-pic">
+    </button>
+  </div>
+
+  <div class="header-center">
+    <h1>{{ restaurantName }}</h1>
+  </div>
+
+  <div class="header-right">
+
+    <button class="cart-btn" (click)="goToCart()">
+      <div class="number-items">{{nb_items}} </div>
+      <img src="./assets/cart.png" alt="Cart" class="cart-pic">
+    </button>
+
+    <button class="profile-btn" (click)="goToProfile()">
+      <img src="{{ profilePhoto }}" alt="Profile" class="profile-pic">
+    </button>
+  </div>
+</header>
+<div class="div-align"></div>

@@ -1,0 +1,125 @@
+/* Header Styles */
+.div-align{
+  height: 60px;
+}
+.top-fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 430px;
+  height: 60px;
+  background: linear-gradient(to bottom, #28c049 85%, #d2d2d2);
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+
+}
+
+/* Left and Right Sections */
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+}
+
+.menu-btn, .profile-btn, .cart-btn, .home-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.menu-btn, .cart-btn{
+  margin-right: 10px;
+}
+
+.number-items{
+  position:absolute;
+  top:0;
+  right:0;
+  width:15px;
+  height: 15px;
+  background-color: red;
+  color:white;
+  border-radius: 50%;
+  transform: translate(50%,-50%) ;
+ 
+}
+.menu-pic, .home-pic, .cart-pic {
+  width: 35px;
+  height: 35px;
+  
+}
+
+.cart-btn{
+  position:relative;
+}
+.profile-pic {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%; /* Arrondi uniquement pour la photo de profil */
+  object-fit: cover;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Center Section */
+.header-center h1 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* Dropdown Menu */
+.menu-options {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+}
+
+.menu-options.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-options ul {
+  list-style-type: none;
+  padding: 10px 20px;
+}
+
+.menu-options ul li {
+  margin: 8px 0;
+}
+
+.menu-options ul li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.menu-options ul li a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Body Padding for Header Offset */
+body {
+  padding-top: 60px;
+}
