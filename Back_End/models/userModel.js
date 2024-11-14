@@ -12,6 +12,14 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    mail: {
+        type: String,
+        required: true,
+    },
+    phone: {
+        type: String,
+        required: true,
+    }
 });
 
 // Middleware Mongoose pour hacher le mot de passe avant de sauvegarder l'utilisateur
