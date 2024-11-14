@@ -10,11 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "express": "^4.21.1",
+    "libphonenumber-js": "^1.11.14",
     "mongodb": "^6.8.1",
-    "mongoose": "^8.8.1"
+    "mongoose": "^8.8.1",
+    "validator": "^13.12.0"
   },
   "type": "module"
 }

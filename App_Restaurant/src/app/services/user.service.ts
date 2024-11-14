@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   private apiUrl = 'http://localhost:3000/user/getUser'; 
-  private apiUrlmodif = 'http://localhost:3000/user/updateUser/';
+  private apiUrlmodif = 'http://localhost:3000/user/updateUser';
   username = localStorage.getItem('username');
 
   constructor(private http: HttpClient) {}
