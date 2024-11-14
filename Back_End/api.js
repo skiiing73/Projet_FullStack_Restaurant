@@ -15,7 +15,7 @@ const app = express();
 const port = 3000;
 
 // MongoDB URI with authentication
-const uri = `mongodb://${user}:${password}@${address}:27017/?authMechanism=DEFAULT&authSource=admin`;
+const uri = `mongodb://${user}:${password}@${address}:27017/borne_restaurant?authMechanism=DEFAULT&authSource=admin`;
 
 // Middleware
 app.use(cors());
@@ -52,6 +52,7 @@ app.post('/add_dish', async (req, res) => {
 app.get('/', (req, res) => {
     res.send('Welcome to the Restaurant API');
 });
+
 
 // Start the server
 app.listen(port, () => {
