@@ -6,7 +6,7 @@
     <p>{{ dish.description }}</p>
     <div class="btn_price">
       <strong>{{ dish.price }} $</strong>
-      <button class="btn_cart" (click)="onAddToCart()">
+      <button class="btn_cart" (click)="onAddToCart($event)">
         Add To Cart
         <img src="./assets/cart.png" alt="Cart" class="cart-pic">
       </button>

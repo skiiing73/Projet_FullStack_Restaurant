@@ -1,6 +1,5 @@
 
   <div class="background-overlay">
-    <div class="restaurant-name">Amazing Restaurant</div>
     <div class="login-box">
       <h2>Login</h2>
       <form (submit)="onLogin()">
@@ -18,7 +17,7 @@
             name="password"
             required>
             <button type="button" (click)="togglePasswordVisibility()" class="show-password-btn">
-              <img class="show-pic" [src]="showPassword ? './assets/eye-slash.svg' : './assets/eye.svg'" >
+              <img class="show-pic" [src]="showPassword ? './assets/eye.svg' : './assets/eye-slash.svg'" >
             </button>
           </div>
           

@@ -19,13 +19,21 @@ export class DishComponent {
 
   constructor(private cartService: CartService) {} // Injection du service CartService
 
-  onAddToCart() {
+  onAddToCart(event: MouseEvent | undefined) {
     this.cartService.addToCart({
       id: this.dish.id,
       name: this.dish.name,
       price: this.dish.price,
       photo: this.dish.photo
     });
-    console.log(`${this.dish.name} added to cart!`);
-  }
+    if(event){
+      const button = event.target as HTMLElement;  // Cibler le bouton cliqué
+      button.classList.add('btn-clicked');
+
+      // Enlever la classe après l'animation (300 ms)
+      setTimeout(() => {
+        button.classList.remove('btn-clicked');
+      }, 300);
+    }
+  }  
 }

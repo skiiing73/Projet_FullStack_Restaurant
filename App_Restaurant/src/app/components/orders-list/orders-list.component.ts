@@ -20,6 +20,10 @@ export class OrdersListComponent {
     ]),
     new Order([
       new Dish(1, 'The Lovely Burger', 19.99, 'Main Dish', 'assets/burger.jpeg', 'A delicious burger')
-    ])
+    ]),
+    new Order([
+      new Dish(1, 'The Lovely Burger', 19.99, 'Main Dish', 'assets/burger.jpeg', 'A delicious burger'),
+      new Dish(2, 'American HOT DOG', 15.99, 'Main Dish', 'assets/hotdog.jpeg', 'Classic American hot dog')
+    ]),
   ];
 }

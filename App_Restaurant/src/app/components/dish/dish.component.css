@@ -74,6 +74,38 @@
     color: #fff;
     text-decoration: none;
   }
+  .btn-clicked {
+    animation: bounceZoom 0.3s ease, raiseEffect 0.2s ease;
+  }
+  
+  @keyframes bounceZoom {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.1) rotate(5deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+  
+  @keyframes raiseEffect {
+    0% {
+      transform: translateY(0);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+      transform: translateY(0);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  
   .cart-pic{
     width: 20px;
     height: 20px;

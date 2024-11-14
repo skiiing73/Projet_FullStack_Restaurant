@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
 import { RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
 import { CartService } from '../../services/cart.service';
+import confetti from 'canvas-confetti';
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -43,9 +45,12 @@ export class CartComponent {
 
   // Proceed to checkout (this could be a separate process)
   checkout() {
+    confetti({
+      particleCount: 100, 
+      spread: 70, 
+      origin: { y: 0.6 }
+    });
     alert('Proceeding to checkout');
-  }
-  getCartItemCount(): number {
-    return this.cartItems.length;
+
   }
 }

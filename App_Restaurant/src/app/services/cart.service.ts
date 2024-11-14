@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CartService {
   private cartItems: any[] = [];
-  private cartItemsCount = new BehaviorSubject<number>(0); // Observable for cart item count
+  private cartItemsCount = new BehaviorSubject<number>(0);
 
   cartItemsCount$ = this.cartItemsCount.asObservable();
 
@@ -22,7 +22,7 @@ export class CartService {
     }
 
     // Update the cart item count after modification
-    this.cartItemsCount.next(this.cartItems.length);
+    this.cartItemsCount.next(this.getCartItemCount());
   }
 
   getCartItems() {
@@ -36,7 +36,7 @@ export class CartService {
       this.cartItems[itemIndex].quantity++;
       
       // Update the cart item count after modification
-      this.cartItemsCount.next(this.cartItems.length);
+      this.cartItemsCount.next(this.getCartItemCount());
     }
   }
 
@@ -49,7 +49,7 @@ export class CartService {
     }
 
     
-    this.cartItemsCount.next(this.cartItems.length);
+    this.cartItemsCount.next(this.getCartItemCount());
   }
 
   getTotalPrice(): number {
@@ -57,6 +57,12 @@ export class CartService {
   }
 
   getCartItemCount(): number {
-    return this.cartItems.length;
+    let nb = 0;
+    for (const item of this.cartItems) {
+      nb += item.quantity; // Sum the quantity of each item
+    }
+    return nb;
   }
-}
+  
+  }
+

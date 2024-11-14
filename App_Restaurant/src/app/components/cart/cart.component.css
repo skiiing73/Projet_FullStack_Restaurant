@@ -80,18 +80,37 @@ background-color: #c82333;
 background-color: #26a10d;
 }
 .cart-total {
-text-align: right;
+text-align: left;
+display: flex;
+align-items: baseline;
+justify-content: center;
+
 }
 
 .checkout-btn {
-background-color: #28a745;
-color: white;
-border: none;
-padding: 10px 20px;
-border-radius: 5px;
-cursor: pointer;
-}
+    background-image: linear-gradient(to right, #28c049 0%, #31e158  100%);
+    padding: 0 10px;
+    display :flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    color: black;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    margin-left:100px ;
+    
+  }
 
 .checkout-btn:hover {
 background-color: #075017;
 }
+.checkout-btn:active {
+    transform: translateY(-4px);
+}
+.dollar-pic{
+    width: 20px;
+    height: 20px;
+    margin-left :.5rem;
+  }
+   
