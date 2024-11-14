@@ -114,3 +114,6 @@ background-color: #075017;
     margin-left :.5rem;
   }
    
+  .cart-image{
+    max-width: 370px;
+  }
