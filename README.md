@@ -70,38 +70,6 @@ Make sure you have the following installed on your machine:
   - MongoDB is used to store the data.
   - Express.js handles API requests for managing orders.
 
-## Import Modules
-For the front-end, make sure you import the necessary Angular modules:
-
-```typescript
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { OrderComponent } from './components/order/order.component';
-import { OrderListComponent } from './components/order-list/order-list.component';
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    OrderComponent,
-    OrderListComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-```
-
 ## Contributing
 1. Clone the repository.
 2. Create a new branch for your feature or bugfix.
