@@ -21,7 +21,7 @@ const DishSchema = new mongoose.Schema({
 });
 
 // Création du modèle
-const Dish = mongoose.model('Dish', DishSchema);
+const Dish = mongoose.model('Dish', DishSchema, 'dish');
 
 // Exportation du modèle
 export default Dish;
