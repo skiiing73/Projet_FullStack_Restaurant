@@ -1,13 +1,15 @@
-// Import necessary modules
-const { user,password,address } = require('../config.js');
-const express = require('express');
-const { MongoClient, ObjectId } = require('mongodb');
-const bodyParser = require('body-parser');
-const path = require('path');
+// Import MongoDB credentials
+import { user, password, address } from './config.js';
 
-// Import des routes
-const dishRoutes = require('./routes/dishRoutes');
-const userRoutes = require('./routes/userRoutes');
+// Import necessary modules with ES syntax
+import express from 'express';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+
+// Import routes
+import dishRoutes from './routes/dishRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 const app = express();
 const port = 3000;
@@ -19,26 +21,18 @@ const uri = `mongodb://${user}:${password}@${address}:27017/?authMechanism=DEFAU
 app.use(cors());
 app.use(bodyParser.json());
 
-// Connexion à MongoDB
+// Connect to MongoDB
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error('Could not connect to MongoDB', err));
 
-// Utilisation des routes
+// Use routes
 app.use('/dish', dishRoutes);
 app.use('/user', userRoutes);
 
-
-
-
-
-
-
-// Routes
-// http://localhost:3000/add_message?message=bonjour+thomas
-// POST: Add a new message
+// POST: Add a new dish
 app.post('/add_dish', async (req, res) => {
-    const Collection = db.collection('dish');
+    const Collection = mongoose.connection.collection('dish');
     const newDish = {
         name: req.body.name,
         price: req.body.price,
@@ -50,20 +44,14 @@ app.post('/add_dish', async (req, res) => {
         await Collection.insertOne(newDish);
         res.redirect('/'); // Redirect back to the main page
     } catch (err) {
-        res.status(500).send('Error adding message');
+        res.status(500).send('Error adding dish');
     }
 });
 
 // Serve the frontend page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.send('Welcome to the Restaurant API');
 });
-
-
-
-
-
-
 
 // Start the server
 app.listen(port, () => {
