@@ -10,9 +10,9 @@ export class CartService {
 
   cartItemsCount$ = this.cartItemsCount.asObservable();
 
-  addToCart(dish: { id: number, name: string, price: number, photo: string }) {
-    const itemIndex = this.cartItems.findIndex(item => item.id === dish.id);
-    console.log(dish.id)
+  addToCart(dish: {_id: string, name: string, price: number, picture: string }) {
+    const itemIndex = this.cartItems.findIndex(item => item._id === dish._id);
+    console.log(dish.picture)
     if (itemIndex !== -1) {
       // If item already exists in cart, increase quantity
       this.cartItems[itemIndex].quantity++;
@@ -29,8 +29,8 @@ export class CartService {
     return this.cartItems;
   }
 
-  addAgainToCart(dishId: number) {
-    const itemIndex = this.cartItems.findIndex(item => item.id === dishId);
+  addAgainToCart(dishId: string) {
+    const itemIndex = this.cartItems.findIndex(item => item._id === dishId);
     
     if (itemIndex !== -1) {
       this.cartItems[itemIndex].quantity++;
@@ -40,15 +40,13 @@ export class CartService {
     }
   }
 
-  removeFromCart(dishId: number) {
-    const itemIndex = this.cartItems.findIndex(item => item.id === dishId);
+  removeFromCart(dishId: string) {
+    const itemIndex = this.cartItems.findIndex(item => item._id === dishId);
     if (this.cartItems[itemIndex].quantity > 1) {
       this.cartItems[itemIndex].quantity--;
     } else {
-      this.cartItems = this.cartItems.filter(item => item.id !== dishId);  
+      this.cartItems = this.cartItems.filter(item => item._id !== dishId);  
     }
-
-    
     this.cartItemsCount.next(this.getCartItemCount());
   }
   removeAllFromCart() {

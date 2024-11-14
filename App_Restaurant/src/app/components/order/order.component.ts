@@ -17,10 +17,10 @@ export class OrderComponent {
   onAddToCart() {
     this.order.dishes.forEach(dish => {
       this.cartService.addToCart({
-        id: dish.id,
+        _id: dish._id,
         name: dish.name,
         price: dish.price,
-        photo: dish.photo
+        picture: dish.picture
       });
       console.log(`${dish.name} added to cart!`);
     });

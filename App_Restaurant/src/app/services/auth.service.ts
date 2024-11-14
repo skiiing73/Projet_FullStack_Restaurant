@@ -13,22 +13,14 @@ export class AuthService {
 
   constructor(private router: Router, private http: HttpClient) {}
 
-  login(username: string, password: string): Observable<boolean> {
+  login(username: string, password: string): boolean {
     const body = { username, password };
-    return this.http.post<any>(this.apiUrllogin, body).pipe(
-      tap((response) => {
-        if (response && response.success) { // Vérifier si la réponse est un succès
-          this.loggedIn = true;
-          if (typeof localStorage !== 'undefined') {
-            localStorage.setItem('isAuthenticated', 'true'); // Stocker le statut de connexion
-          }
-        }
-      }),
-      catchError((error) => {
-        console.error('Login failed', error);
-        return of(false); // Retourner `false` si la connexion échoue
-      })
-    );
+    localStorage.setItem('isAuthenticated', 'true');
+    if (this.http.post(this.apiUrllogin, body)){
+      localStorage.setItem('isAuthenticated', 'true');
+      return true;
+    }; 
+    return false;
   }
 
   isLoggedIn(): boolean {
@@ -51,6 +43,7 @@ export class AuthService {
     //a remplir quand api
     this.loggedIn = true;
       localStorage.setItem('isAuthenticated', 'true');
+      localStorage.setItem('username', username);
   }
  
 }

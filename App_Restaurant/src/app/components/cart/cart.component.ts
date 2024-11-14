@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import confetti from 'canvas-confetti';
 
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -30,13 +31,13 @@ export class CartComponent {
   }
 
   
-  addAgainToCart(ItemId:number){
-    this.cartService.addAgainToCart(ItemId);
+  addAgainToCart(Item_id:string){
+    this.cartService.addAgainToCart(Item_id);
     this.cartItems=this.cartService.getCartItems();
   
   }
-  removeFromCart(itemId: number) {
-    this.cartService.removeFromCart(itemId);
+  removeFromCart(item_id: string) {
+    this.cartService.removeFromCart(item_id);
     this.cartItems = this.cartService.getCartItems(); 
   }
 
