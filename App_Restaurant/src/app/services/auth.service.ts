@@ -1,50 +1,62 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
+import * as bcrypt from 'bcryptjs';  // Importation de bcryptjs
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private loggedIn = false;
   private apiUrllogin = 'http://localhost:3000/user/login';
+  private apiUrlSingin = 'http://localhost:3000/user/createUser';
 
   constructor(private router: Router, private http: HttpClient) {}
 
-  login(username: string, password: string): boolean {
+  // Login function
+  login(username: string, password: string): Observable<any> {
     const body = { username, password };
-    localStorage.setItem('isAuthenticated', 'true');
-    if (this.http.post(this.apiUrllogin, body)){
-      localStorage.setItem('isAuthenticated', 'true');
-      localStorage.setItem('username', username);
-      return true;
-    }; 
-    return false;
-  }
-
-  isLoggedIn(): boolean {
-    return (
-      this.loggedIn ||
-      (typeof localStorage !== 'undefined' && localStorage.getItem('isAuthenticated') === 'true')
+    return this.http.post(this.apiUrllogin, body).pipe(
+      tap(() => {
+        localStorage.setItem('isAuthenticated', 'true');
+        localStorage.setItem('username', username);
+      }),
+      catchError((error) => {
+        console.error('Login error', error);
+        return throwError(error); // Utilisez throwError au lieu de Observable.throw
+      })
     );
   }
 
+  // Check if user is logged in
+  isLoggedIn(): boolean {
+    return (
+      typeof localStorage !== 'undefined' && localStorage.getItem('isAuthenticated') === 'true'
+    );
+  }
+
+  // Logout function
   logout(): void {
-    this.loggedIn = false;
-    if (typeof localStorage !== 'undefined') {
-      localStorage.removeItem('isAuthenticated'); // Supprimer le statut de connexion
-    }
-    this.router.navigate(['/login']); // Rediriger vers la page de connexion
+    localStorage.removeItem('isAuthenticated');
+    localStorage.removeItem('username');
+    this.router.navigate(['/login']); // Redirect to login page
   }
 
+  // Signin function
+  signin(username: string, email: string, phone: string, password: string): Observable<any> {
+    // Hacher le mot de passe avant de l'envoyer
+    const hashedPassword = bcrypt.hashSync(password, 10); // Hachage avec un coût de 10
 
-  signin(username:string,mail:string,phone:string,password:string):void{
-    //a remplir quand api
-    this.loggedIn = true;
-      localStorage.setItem('isAuthenticated', 'true');
-      localStorage.setItem('username', username);
+    const body = { username, email, phone, password: hashedPassword }; // Utilisez le mot de passe haché
+    return this.http.post(this.apiUrlSingin, body).pipe(
+      tap(() => {
+        this.login(username, hashedPassword).subscribe(); // Connexion après l'inscription
+      }),
+      catchError((error) => {
+        console.error('Signin error', error);
+        return throwError(error); // Utilisez throwError au lieu de Observable.throw
+      })
+    );
   }
- 
 }

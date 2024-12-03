@@ -3,11 +3,11 @@ import bcrypt from 'bcrypt';
 
 // Fonction pour créer un nouvel utilisateur
 export async function createUser(req, res) {
-    const { username, mail, phone, password } = req.body;
+    const { username, email, phone, password } = req.body;
 
     try {
         const hashedPassword = await bcrypt.hash(password, 10); // Hachage du mot de passe
-        const newUser = new User({ username, password: hashedPassword, mail, phone });
+        const newUser = new User({ username, password: hashedPassword, email, phone });
         const savedUser = await newUser.save();
         res.status(201).json({ message: 'Utilisateur créé', user: savedUser });
     } catch (error) {

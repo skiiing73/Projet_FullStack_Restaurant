@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  imports:[CommonModule,FormsModule,RouterOutlet,RouterModule]
+  imports:[CommonModule,FormsModule,RouterModule]
 })
 
 export class LoginComponent {
@@ -22,12 +22,19 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin(): void {
-    if (this.authService.login(this.username, this.password)) {
-      this.router.navigate(['/dishes']); // Redirect to the dishes page after successful login
-    } else {
-      this.errorMessage = 'Invalid username or password';
-    }
+    this.authService.login(this.username, this.password).subscribe(
+      response => {
+        // Si la connexion est réussie
+        this.router.navigate(['/dishes']); // Redirige vers la page des plats
+      },
+      error => {
+        // Si une erreur se produit (par exemple, mauvais identifiants)
+        this.errorMessage = 'Invalid username or password';
+        console.error('Login failed', error); // Affiche l'erreur dans la console
+      }
+    );
   }
+  
   togglePasswordVisibility() {    
     this.showPassword = !this.showPassword;
   }
