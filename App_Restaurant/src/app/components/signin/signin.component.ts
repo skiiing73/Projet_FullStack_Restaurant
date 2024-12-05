@@ -41,8 +41,12 @@ export class SigninComponent {
           this.errorMessage = null;
         },
         error => {
-          // Si une erreur se produit, afficher le message d'erreur
-          this.errorMessage = 'Erreur lors de l\'inscription. Veuillez réessayer.';
+          // Si une erreur se produit, afficher le message d'erreur spécifique
+          if (error.status === 409) {
+            this.errorMessage = 'Le nom d\'utilisateur est déjà pris. Veuillez en choisir un autre.';
+          } else {
+            this.errorMessage = 'Erreur lors de l\'inscription. Veuillez réessayer.';
+          }
           console.error('Signin failed', error);
         }
       );
@@ -50,4 +54,5 @@ export class SigninComponent {
       this.errorMessage = 'Veuillez remplir tous les champs!';
     }
   }
+  
 }
