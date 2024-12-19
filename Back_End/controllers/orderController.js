@@ -1,4 +1,5 @@
 import Order from '../models/orderModel.js';
+import Dish from '../models/dishModel.js';
 
 // Function to create an order
 export const createOrder = async (req, res) => {
@@ -27,7 +28,7 @@ export const getOrders = async (req, res) => {
     const { username } = req.params;
 
     try {
-        const orders = await Order.find({ username });
+        const orders = await Order.find({ username }).populate('list_id_dish');
 
         res.json(orders);
     } catch (err) {

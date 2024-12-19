@@ -2,10 +2,11 @@ import mongoose from 'mongoose';
 
 // Définition du schéma utilisateur
 const CommandSchema = new mongoose.Schema({
-    list_id_dish: {
-        type: Array,
+    list_id_dish: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Dish', // Ref to Dish
         required: true,
-    },
+    }],
     username: {
         type: String,
         required: true,
