@@ -1,5 +1,5 @@
 import Opinion from '../models/opinionModel.js';
-
+import mongoose from 'mongoose';
 export const createOpinion = async (req, res) => {
     const { id_plat, username, rate, comment } = req.body;
 
@@ -33,12 +33,11 @@ export const createOpinion = async (req, res) => {
 };
 
 export const getOpinionsByDishId = async (req, res) => {
-    const { id_plat } = req.params;
-
+    const { id } = req.params;
     try {
-
+        const dishId = new mongoose.Types.ObjectId(id);
         // Récupérer les opinions associées
-        const opinions = await Opinion.find({ id_plat });
+        const opinions = await Opinion.find({ dishId });
 
         res.json(opinions);
     } catch (err) {
