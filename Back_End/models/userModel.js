@@ -20,6 +20,8 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     }
+},{
+    versionKey: false, // Désactive le champ __v
 });
 
 // Middleware Mongoose pour hacher le mot de passe avant de sauvegarder l'utilisateur

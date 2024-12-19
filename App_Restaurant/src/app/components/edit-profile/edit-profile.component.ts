@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/user.service'; // Import the UserService
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-profile',
@@ -13,8 +14,8 @@ import { UserService } from '../../services/user.service'; // Import the UserSer
 export class EditProfileComponent {
   @Input() user: any; // Input to receive user data
   @Output() editComplete = new EventEmitter<void>(); // Output to notify the parent component
-  
-  constructor(private userService: UserService) {}
+  errorMessage: string = '';
+  constructor(private userService: UserService,private router :Router) {}
 
   // Function to handle profile update
   editProfile() {
@@ -22,12 +23,24 @@ export class EditProfileComponent {
       this.userService.updateUserProfile(this.user).subscribe(
         (response) => {
           console.log('Profile updated successfully:', response);
-          this.editComplete.emit(); // Emit an event when editing is complete
+          this.editComplete.emit(); 
+          this.errorMessage="";
         },
         (error) => {
           console.error('Error updating profile:', error);
+          if (error.status === 400) {
+            this.errorMessage = "Numéro de téléphone ou email invalide!";
+          } 
+          else if (error.status === 500) {
+            this.errorMessage = "Ce nom d'utilisateur est déjà pris!";
+          } else {
+            this.errorMessage = "Une erreur inconnue s'est produite. Veuillez réessayer.";
+          }
         }
       );
     }
+  }
+  goBack() :void{
+    this.router.navigate(['/profile']); 
   }
 }

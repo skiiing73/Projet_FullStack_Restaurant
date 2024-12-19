@@ -8,6 +8,7 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
+    position:relative;
   }
   
   h2 {
@@ -56,4 +57,15 @@
   .edit-btn:hover {
     background-color: #28d054; /* Couleur du bouton au survol */
   }
-  
+  .back-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top:20px;
+    left:10px;
+  }
+.fleche-pic{
+    width: 30px;
+    height: 30px;
+}

@@ -1,4 +1,7 @@
 <div class="edit-box">
+    <button class="back-btn" (click)="goBack()">
+      <img class="fleche-pic" [src]="'./assets/fleche.webp'" >
+    </button>
     <h2>Edit your Info</h2>
     <form (submit)="editProfile()">
       <div class="input-group">
@@ -13,6 +16,7 @@
         <label for="phone">Phone</label>
         <input type="text" id="phone" [(ngModel)]="user.phone" name="phone" required>
       </div>
+      <div *ngIf="errorMessage" class="error" style="color:red">{{ errorMessage }}</div>
       <button type="submit" class="edit-btn">Submit</button>
     </form>
 </div>

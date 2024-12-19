@@ -17,7 +17,7 @@ export class OrderService {
     const username = localStorage.getItem('username');
     return this.http.get<any[]>(`${this.apiUrlOrder}/${username}`);
   }
-
+  
   sendOrder(order: {list_id_dish: string[]; username: string | null; status: string; }): Observable<any>{
     return this.http.post(this.apiUrlOrderCreate, order);
     
