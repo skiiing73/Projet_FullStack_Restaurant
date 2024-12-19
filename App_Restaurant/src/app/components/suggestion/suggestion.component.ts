@@ -1,21 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DishService } from '../../services/dish.service';
-import { CartService } from '../../services/cart.service';
-import { OrderService } from '../../services/order.service';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-
+import { DishService } from 'src/app/services/dish.service';
+import { CartService } from 'src/app/services/cart.service';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'app-suggestion',
   standalone: true,
-  imports: [CommonModule, BrowserModule, RouterModule],
+  imports: [CommonModule],
   templateUrl: './suggestion.component.html',
   styleUrls: ['./suggestion.component.css']
 })
-
 export class SuggestionComponent implements OnInit {
   suggestions: any[] = [];
 
@@ -29,7 +24,8 @@ export class SuggestionComponent implements OnInit {
     const cart = this.cartService.getCartItems();
     this.dishService.getDishes().subscribe(dishes => {
       this.orderService.getOrder().subscribe(order => {
-        const recommandation = this.getRecommendedDishes(dishes, cart, order);
+        this.suggestions = this.getRecommendedDishes(dishes, cart, order).slice(0, 5);
+        console.log(this.suggestions);
       });
     });
   }
@@ -63,11 +59,10 @@ export class SuggestionComponent implements OnInit {
   }
 
   shuffleArray(array: any[]): any[] {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
   }
-
 }

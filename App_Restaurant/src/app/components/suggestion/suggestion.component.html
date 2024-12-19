@@ -2,8 +2,8 @@
   <h2>Other Dishes you may like</h2>
   <div class="suggestions-scroll">
     <ul>
-      <li *ngFor="let dish of suggestions">
-        <a [routerLink]="['/dish', dish._id]">{{ dish.name }}</a>
+      <li *ngFor="let dish of recommondations">
+        <app-dish-recommondations> [dish]="dish"></app-dish-recommondations>
       </li>
     </ul>
   </div>
