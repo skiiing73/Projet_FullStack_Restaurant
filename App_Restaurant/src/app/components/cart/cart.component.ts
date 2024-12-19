@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import confetti from 'canvas-confetti';
 import { OrderService } from '../../services/order.service';
-import { SuggestionComponent } from '../suggestion/suggestion.component';
+import { SuggestionComponent } from '../recommandation/recommandation.component';
 
 @Component({
   selector: 'app-cart',

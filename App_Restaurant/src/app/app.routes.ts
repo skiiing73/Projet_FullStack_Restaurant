@@ -11,7 +11,7 @@ import { AuthGuard } from './auth.guard'; // Import the AuthGuard
 import { SigninComponent } from './components/signin/signin.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { OpinionComponent } from './components/opinion/opinion.component';
-import { SuggestionComponent } from './components/suggestion/suggestion.component';
+import { SuggestionComponent } from './components/recommandation/recommandation.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dishes', pathMatch: 'full' },
