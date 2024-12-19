@@ -17,7 +17,7 @@ export class OrderService {
     return this.http.get<any[]>(`${this.apiUrlOrder}/${this.username}`);
   }
 
-  sendOrder(order: { list_id_dish: string[]; username: string | null; status: string; }): Observable<any>{
+  sendOrder(order: {list_id_dish: string[]; username: string | null; status: string; }): Observable<any>{
     return this.http.post(this.apiUrlOrderCreate, order);
     
   }
