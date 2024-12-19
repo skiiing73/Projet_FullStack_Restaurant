@@ -42,9 +42,5 @@ export class DishRecommondationsComponent {
       }, 300);
     }
   }
-
-  onSeeOpinion(_id: string) {
-    this.router.navigate(['/opinion', _id]); // Naviguer vers la route avec l'ID du plat comme paramètre
-  }
 }
 
