@@ -1,24 +1,26 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Import CommonModule  
 import { CartService } from '../../services/cart.service';
+import { Router } from '@angular/router'; // Import Router
 
 @Component({
   selector: 'app-dish',
   templateUrl: './dish.component.html',
   styleUrls: ['./dish.component.css'],
-  standalone :true
+  standalone: true
 })
 export class DishComponent {
-  @Input() dish: { _id: string, name: string, description: string, price: number, picture: string, type: string }= {
-    _id :"1" ,
-    name : 'The Lovely Burger',
-    description:"burger de fou,",
-    price:19.99,
-    type:'Dish', 
-    picture:'./assets/burger.jpeg',
+
+  @Input() dish: { _id: string, name: string, description: string, price: number, picture: string, type: string } = {
+    _id: "1",
+    name: 'The Lovely Burger',
+    description: "burger de fou,",
+    price: 19.99,
+    type: 'Dish',
+    picture: './assets/burger.jpeg',
   };
-  
-  constructor(private cartService: CartService) {} // Injection du service CartService
+
+  constructor(private cartService: CartService, private router: Router) {} // Injection du service Router
 
   onAddToCart(event: MouseEvent | undefined) {
     this.cartService.addToCart({
@@ -27,7 +29,7 @@ export class DishComponent {
       price: this.dish.price,
       picture: this.dish.picture
     });
-    if(event){
+    if (event) {
       const button = event.target as HTMLElement;  // Cibler le bouton cliqué
       button.classList.add('btn-clicked');
 
@@ -36,5 +38,9 @@ export class DishComponent {
         button.classList.remove('btn-clicked');
       }, 300);
     }
-  }  
+  }
+
+  onSeeOpinion(_id: string) {
+    this.router.navigate(['/opinion', _id]); // Naviguer vers la route avec l'ID du plat comme paramètre
+  }
 }

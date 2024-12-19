@@ -1,0 +1,22 @@
+
+<div class="opinion-container">
+  <h2>Opinions for Dish {{ dish.name }}</h2>
+  <img [src]="dish.picture" alt="Dish Image" class="img-fluid mb-3">
+  <ul>
+    <li *ngFor="let opinion of opinions">
+      <strong>{{ opinion.user }}</strong>: {{ opinion.comment }}
+      <div class="stars">
+        <span *ngFor="let i of stars(opinion.rating)" [ngClass]="{'filled': i <= opinion.rating}">&#9733;</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="form-container">
+  <h2>And you, what do you think ?!</h2>
+  <form (submit)="addOpinion(comment.value, rating.valueAsNumber)">
+    <input #comment type="text" placeholder="Your Comment" required />
+    <input #rating type="number" min="1" max="5" placeholder="Rating" required />
+    <button type="submit">Add Opinion</button>
+  </form>
+</div>

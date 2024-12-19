@@ -6,6 +6,11 @@
     <p>{{ dish.description }}</p>
     <div class="btn_price">
       <strong>{{ dish.price }} $</strong>
+      <button class="btn_opinion" (click)="onSeeOpinion(dish._id)">
+        See Opinion
+      <img src="./assets/avis.png" alt="avis" class="cart-pic">
+
+      </button>
       <button class="btn_cart" (click)="onAddToCart($event)">
         Add To Cart
         <img src="./assets/cart.png" alt="Cart" class="cart-pic">
