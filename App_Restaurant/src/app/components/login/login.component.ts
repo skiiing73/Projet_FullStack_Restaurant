@@ -26,6 +26,7 @@ export class LoginComponent {
       response => {
         // Si la connexion est réussie
         this.router.navigate(['/dishes']); // Redirige vers la page des plats
+        window.location.reload();
       },
       error => {
         // Si une erreur se produit (par exemple, mauvais identifiants)

@@ -3,9 +3,11 @@ import { Dish } from './dish';
 
 export class Order {
   _id: string;
+  list_id_dish: Dish[];
   username: string;
   status: string;
-  list_id_dish: Dish[];
+  ;
+  
   constructor(
     _id: string,
     username: string,
