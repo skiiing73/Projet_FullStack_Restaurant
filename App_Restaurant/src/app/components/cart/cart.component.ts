@@ -47,6 +47,11 @@ export class CartComponent {
   }
 
   checkout() {
+    const cartItems=this.cartItems;
+    const username=localStorage.getItem("username");
+    const status ="completed";
+    
+    const order={cartItems,username,status};
     confetti({
       particleCount: 100, 
       spread: 70, 

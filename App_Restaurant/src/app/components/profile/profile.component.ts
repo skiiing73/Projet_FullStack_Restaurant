@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { OrdersListComponent } from "../orders-list/orders-list.component";
 import { EditProfileComponent } from '../edit-profile/edit-profile.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -18,9 +19,15 @@ export class ProfileComponent implements OnInit {
 
   user: any = {}; // The user data that will be updated
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService,private route: ActivatedRoute) {}
 
   ngOnInit() {
+    this.route.params.subscribe(() => {
+      this.fetchUserData(); // Récupère les données à chaque changement de route
+    });
+  }
+  
+  fetchUserData() {
     this.userService.getUserData().subscribe(
       data => {
         this.user = data;

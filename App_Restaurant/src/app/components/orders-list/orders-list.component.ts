@@ -19,28 +19,37 @@ export class OrdersListComponent {
   constructor(private orderService: OrderService) {}
 
   ngOnInit() {
-    // Appeler l'API pour récupérer les orders
-    this.orderService.getOrder().subscribe((ordersData) => {
-      // Vérification si les données sont valides avant de les mapper
-      if (ordersData && Array.isArray(ordersData)) {
-        this.orders = ordersData.map((orderData: any) => new Order(
-          orderData._id,
-          orderData.username,
-          orderData.status,
-          orderData.list_id_dish ? orderData.list_id_dish.map((dishData: any) => new Dish(
-            dishData._id,
-            dishData.name,
-            dishData.price,
-            dishData.type,
-            dishData.picture,
-            dishData.description
-          )) : []
-        ));
-      } else {
-        console.error('Invalid orders data:', ordersData);
+    this.orderService.getOrder().subscribe(
+      (ordersData) => {
+        if (ordersData && Array.isArray(ordersData)) {
+          this.orders = ordersData.map((orderData: any) => {
+            const dishes = Array.isArray(orderData.list_id_dish)
+              ? orderData.list_id_dish.map((dishData: any) =>
+                  new Dish(
+                    dishData._id,
+                    dishData.name,
+                    dishData.price,
+                    dishData.type,
+                    dishData.picture,
+                    dishData.description
+                  )
+                )
+              : []; // Si `list_id_dish` n'est pas un tableau, retournez une liste vide
+  
+            return new Order(
+              orderData._id,
+              orderData.username,
+              orderData.status,
+              dishes
+            );
+          });
+        } else {
+          console.error('Invalid orders data:', ordersData);
+        }
+      },
+      (error) => {
+        console.error('Error fetching orders:', error);
       }
-    }, (error) => {
-      console.error('Error fetching orders:', error);
-    });
+    );
   }
-}
+}  

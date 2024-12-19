@@ -32,7 +32,7 @@ export const createOpinion = async (req, res) => {
     }
 };
 
-import mongoose from 'mongoose'; // Importer mongoose pour utiliser ObjectId
+
 
 export const getOpinionsByDishId = async (req, res) => {
     const { id } = req.params;
