@@ -32,19 +32,24 @@ export const createOpinion = async (req, res) => {
     }
 };
 
+import mongoose from 'mongoose'; // Importer mongoose pour utiliser ObjectId
+
 export const getOpinionsByDishId = async (req, res) => {
     const { id_plat } = req.params;
 
     try {
+        // Convertir id_plat en ObjectId
+        const dishId = mongoose.Types.ObjectId(id_plat); 
 
         // Récupérer les opinions associées
-        const opinions = await Opinion.find({ id_plat });
+        const opinions = await Opinion.find({ dishId });
 
         res.json(opinions);
     } catch (err) {
         res.status(500).json({ message: 'Erreur lors de la récupération des opinions', error: err });
     }
 };
+;
 
 export const getOpinionsByUsername = async (req, res) => {
     const { username } = req.params; // Récupère le username depuis les paramètres de l'URL

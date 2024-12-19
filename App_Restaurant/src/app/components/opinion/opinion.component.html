@@ -6,7 +6,7 @@
     <li *ngFor="let opinion of opinions">
       <strong>{{ opinion.username }}</strong>: {{ opinion.comment }}
       <div class="stars">
-        <span *ngFor="let i of stars(opinion.rating)" [ngClass]="{'filled': i <= opinion.rating}">&#9733;</span>
+        <span *ngFor="let i of stars(opinion.rate)" [ngClass]="{'filled': i <= opinion.rate}">&#9733;</span>
       </div>
     </li>
   </ul>
@@ -14,9 +14,9 @@
 
 <div class="form-container">
   <h2>And you, what do you think ?!</h2>
-  <form (submit)="addOpinion(comment.value, rating.valueAsNumber)">
+  <form (submit)="addOpinion(comment.value, rate.valueAsNumber)">
     <input #comment type="text" placeholder="Your Comment" required />
-    <input #rating type="number" min="1" max="5" placeholder="Rating" required />
+    <input #rate type="number" min="1" max="5" placeholder="rate" required />
     <button type="submit">Add Opinion</button>
   </form>
 </div>
