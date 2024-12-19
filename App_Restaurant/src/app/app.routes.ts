@@ -11,7 +11,7 @@ import { AuthGuard } from './auth.guard'; // Import the AuthGuard
 import { SigninComponent } from './components/signin/signin.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { OpinionComponent } from './components/opinion/opinion.component';
-import { SuggestionComponent } from './components/recommandation/recommandation.component';
+import { RecommandationComponent } from './components/recommandation/recommandation.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dishes', pathMatch: 'full' },
@@ -25,7 +25,7 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent, canActivate: [AuthGuard] }, // Protected route
   { path: 'contact', component: ContactComponent, canActivate: [AuthGuard] }, // Protected route
   { path: 'opinion/:id', component: OpinionComponent, canActivate: [AuthGuard] }, // Protected route
-  { path: 'suggestion/:id', component: SuggestionComponent, canActivate: [AuthGuard] }, // Protected route
+  { path: 'suggestion/:id', component: RecommandationComponent, canActivate: [AuthGuard] }, // Protected route
 ];
 
 @NgModule({
