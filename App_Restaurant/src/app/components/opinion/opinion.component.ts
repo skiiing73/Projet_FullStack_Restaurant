@@ -16,11 +16,12 @@ import { DishService } from '../../services/dish.service';
 export class OpinionComponent implements OnInit{
   dishId!: string;
   dish!:Dish;
-  opinions: { username: string; comment: string; rating: number }[] = [];
+  opinions: { username: string; rate: number;comment: string }[] = [];
   
   constructor(private opinionService: OpinionService, private route: ActivatedRoute,private dishService: DishService) {}
 
   ngOnInit() {  
+    this.opinions=[];
     this.route.params.subscribe(params => {
       this.dishId = params['id']; // 'id' correspond au nom défini dans la route
       
@@ -37,28 +38,42 @@ export class OpinionComponent implements OnInit{
     });
   }
 
-  stars(rating: number): number[] {
+  stars(rate: number): number[] {
     return new Array(5).fill(0).map((_, i) => i + 1);
   }
+
   loadOpinions() {
-    this.opinionService.getOpinions(this.dish._id).subscribe(
-      data => this.opinions = data,
-      error => console.error('Error fetching opinions:', error)
+    this.opinionService.getOpinions(this.dishId).subscribe({
+      next: (data) => {this.opinions = data,
+      console.log(data);
+      },
+      error: (err) => {
+        console.error('Error fetching opinions:', err)
+      } 
+    }
     );
   }
 
-  addOpinion(comment: string, rating: number) {
+  addOpinion(comment: string, rate: number) {
     const username = localStorage.getItem('username');
-    if(username){
-      const opinion={username,comment, rating };
-
-      this.opinionService.addOpinion(this.dish._id, opinion).subscribe(
+    const id_plat = this.dishId;
+  
+    if (!comment || !rate) {
+      alert('Please provide both a comment and a rate');
+      return;
+    }
+  
+    if (username) {
+      const opinion = { id_plat, username, rate, comment };
+  
+      this.opinionService.addOpinion(opinion).subscribe(
         () => this.loadOpinions(),
         error => console.error('Error adding opinion:', error)
       );
-    }
-    else{
-      console.log("username inconnu impossible d'envoyer un avis")
+    } else {
+      console.log("Username is unknown, unable to submit opinion");
     }
   }
+  
+  
 }

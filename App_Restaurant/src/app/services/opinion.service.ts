@@ -8,14 +8,16 @@ import { Observable } from 'rxjs';
 })
 export class OpinionService {
   private apiUrl = 'http://localhost:3000/opinion/getByID'; // URL de l'API
-
+  private apiUrlcreate = 'http://localhost:3000/opinion/create'; // URL de l'API
   constructor(private http: HttpClient) {}
 
-  getOpinions(dishId: string): Observable<{ username: string; comment: string; rating: number }[]> {
-    return this.http.get<{ username: string; comment: string; rating: number }[]>(`${this.apiUrl}/${dishId}`);
+  getOpinions(dishId: string): Observable<{_id:string;dishId:string; username: string; rate: number;comment: string  }[]> {
+   
+    return this.http.get<{_id:string;dishId:string; username: string;rate: number;comment: string }[]>(`${this.apiUrl}/${dishId}`);
   }
 
-  addOpinion(dishId: string, opinion: { username:string; comment: string; rating: number }): Observable<void> {
-    return this.http.post<void>(`${this.apiUrl}/${dishId}`, opinion);
+  addOpinion(opinion: { id_plat: string; username: string; rate: number; comment: string }): Observable<void> {
+    return this.http.post<void>(`${this.apiUrlcreate}`, opinion);
   }
+  
 }

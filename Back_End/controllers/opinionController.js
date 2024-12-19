@@ -1,5 +1,5 @@
 import Opinion from '../models/opinionModel.js';
-
+import mongoose from 'mongoose';
 export const createOpinion = async (req, res) => {
     const { id_plat, username, rate, comment } = req.body;
 
@@ -32,19 +32,21 @@ export const createOpinion = async (req, res) => {
     }
 };
 
+import mongoose from 'mongoose'; // Importer mongoose pour utiliser ObjectId
+
 export const getOpinionsByDishId = async (req, res) => {
-    const { id_plat } = req.params;
-
+    const { id } = req.params;
     try {
-
+        const dishId = new mongoose.Types.ObjectId(id);
         // Récupérer les opinions associées
-        const opinions = await Opinion.find({ id_plat });
+        const opinions = await Opinion.find({ dishId });
 
         res.json(opinions);
     } catch (err) {
         res.status(500).json({ message: 'Erreur lors de la récupération des opinions', error: err });
     }
 };
+;
 
 export const getOpinionsByUsername = async (req, res) => {
     const { username } = req.params; // Récupère le username depuis les paramètres de l'URL
