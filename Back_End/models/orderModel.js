@@ -6,7 +6,7 @@ const CommandSchema = new mongoose.Schema({
         type: Array,
         required: true,
     },
-    id_User: {
+    username: {
         type: String,
         required: true,
     },
@@ -16,8 +16,8 @@ const CommandSchema = new mongoose.Schema({
     }
 });
 
-// Création du modèle utilisateur
-const Command = mongoose.model('Command', CommandSchema, 'command');
+// Création du modèle Command
+const Command = mongoose.model('Order', CommandSchema, 'order');
 
 // Exportation du modèle
 export default Command;
