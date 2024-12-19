@@ -1,5 +1,5 @@
 import Opinion from '../models/opinionModel.js';
-import mongoose from 'mongoose';
+
 export const createOpinion = async (req, res) => {
     const { id_plat, username, rate, comment } = req.body;
 
