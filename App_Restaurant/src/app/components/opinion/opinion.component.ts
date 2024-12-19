@@ -55,6 +55,10 @@ export class OpinionComponent implements OnInit{
         "user": "Charlie",
         "comment": "Great experience overall, but it was a bit pricey.",
         "rating": 4
+      },{
+        "user": "Charlie",
+        "comment": "Great experience overall, but it was a bit pricey.",
+        "rating": 4
       }
     ]
     

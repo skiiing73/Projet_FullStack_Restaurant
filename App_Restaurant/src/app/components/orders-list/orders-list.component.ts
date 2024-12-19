@@ -3,6 +3,7 @@ import { OrderComponent } from "../order/order.component";
 import { Dish } from '../../../dish';
 import { Order } from '../../../order';
 import { CommonModule } from '@angular/common';
+import { OrderService } from '../../services/order.service';
 @Component({
   selector: 'app-orders-list',
   standalone: true,
@@ -11,19 +12,15 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./orders-list.component.css']
 })
 export class OrdersListComponent {
+  orders: any[] = [];
+  constructor(private orderService: OrderService) {} // Injection du service
+  
+    ngOnInit() {
+      // Appeler l'API pour récupérer les orders
+      this.orderService.getOrder().subscribe((ordersdata) => {
+        this.orders = ordersdata;  // Mettre à jour les orders dans le composant
+      });
+    }
+  
 
-  // Sample orders data, each order is a list of dishes
-  orders: Order[] = [
-    new Order([
-      new Dish("1", 'The Lovely Burger', 19.99, 'Main Dish', 'assets/burger.jpeg', 'A delicious burger'),
-      new Dish("2", 'American HOT DOG', 15.99, 'Main Dish', 'assets/hotdog.jpeg', 'Classic American hot dog')
-    ]),
-    new Order([
-      new Dish("2", 'The Lovely Burger', 19.99, 'Main Dish', 'assets/burger.jpeg', 'A delicious burger')
-    ]),
-    new Order([
-      new Dish("2", 'The Lovely Burger', 19.99, 'Main Dish', 'assets/burger.jpeg', 'A delicious burger'),
-      new Dish("2", 'American HOT DOG', 15.99, 'Main Dish', 'assets/hotdog.jpeg', 'Classic American hot dog')
-    ]),
-  ];
 }

@@ -27,7 +27,7 @@ export const getOrders = async (req, res) => {
     const { username } = req.params;
 
     try {
-        const orders = await Order.find({ username });
+        const orders = await Order.find({ username }).populate('dish');
 
         res.json(orders);
     } catch (err) {

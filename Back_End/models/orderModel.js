@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 // Définition du schéma utilisateur
 const CommandSchema = new mongoose.Schema({
-    list: {
+    list_id_dish: {
         type: Array,
         required: true,
     },
@@ -10,7 +10,7 @@ const CommandSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    etat: {
+    status: {
         type: String,
         required: true,
     }
