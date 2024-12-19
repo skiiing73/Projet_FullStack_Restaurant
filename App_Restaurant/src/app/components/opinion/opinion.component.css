@@ -14,7 +14,17 @@ font-size: 24px;
 color: #333;
 margin-bottom: 20px;
 }
-
+.back-btn {
+    background-color: transparent;
+    border: none;
+    position:absolute;
+    cursor: pointer;
+   
+  }
+.fleche-pic{
+    width: 30px;
+    height: 30px;
+}
 .img-fluid{
     display:block;
     margin:auto;

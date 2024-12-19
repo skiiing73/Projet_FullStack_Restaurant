@@ -22,12 +22,6 @@ export class ProfileComponent implements OnInit {
   constructor(private userService: UserService,private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.route.params.subscribe(() => {
-      this.fetchUserData(); // Récupère les données à chaque changement de route
-    });
-  }
-  
-  fetchUserData() {
     this.userService.getUserData().subscribe(
       data => {
         this.user = data;
@@ -37,7 +31,7 @@ export class ProfileComponent implements OnInit {
       }
     );
   }
-
+  
   togglePassword() {
     this.showPassword = !this.showPassword;
   }

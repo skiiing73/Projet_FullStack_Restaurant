@@ -3,9 +3,10 @@
     <span class="badge" style="position: absolute; top: 10px; left: 10px;">{{ dish.type }}</span>
     <img [src]="dish.picture" alt="Dish Image" class="img-fluid mb-3">
     <h5>{{ dish.name }}</h5>
+    <div class="price"><strong>{{ dish.price }} $</strong></div>
     <p>{{ dish.description }}</p>
     <div class="btn_price">
-      <strong>{{ dish.price }} $</strong>
+      
       <button class="btn_opinion" (click)="onSeeOpinion(dish._id)">
         See Opinion
       <img src="./assets/avis.png" alt="avis" class="cart-pic">

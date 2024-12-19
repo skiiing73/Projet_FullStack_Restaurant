@@ -15,7 +15,7 @@ export const createOrder = async (req, res) => {
         return res.status(400).json({ message: 'The list of dish IDs must be a non-empty array' });
     }
 
-    if (!list_of_dish_id.every(id => mongoose.Types.ObjectId.isValid(id))) {
+    if (!list_id_dish.every(id => mongoose.Types.ObjectId.isValid(id))) {
         return res.status(400).json({ message: 'Invalid dish ID(s) provided' });
     }
 

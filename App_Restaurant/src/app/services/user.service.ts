@@ -8,15 +8,17 @@ import { Observable } from 'rxjs';
 export class UserService {
   private apiUrl = 'http://localhost:3000/user/getUser'; 
   private apiUrlmodif = 'http://localhost:3000/user/updateUser';
-  username = localStorage.getItem('username');
-
+  
   constructor(private http: HttpClient) {}
 
   getUserData(): Observable<any> {
-    console.log(this.username); // Debugging the username being passed
-    return this.http.get<any>(`${this.apiUrl}/${this.username}`);
+    const username = localStorage.getItem('username');
+
+    console.log(username); // Debugging the username being passed
+    return this.http.get<any>(`${this.apiUrl}/${username}`);
   }
   updateUserProfile(user: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrlmodif}/${this.username}`, user);
+    const username = localStorage.getItem('username');
+    return this.http.put<any>(`${this.apiUrlmodif}/${username}`, user);
   }
 }

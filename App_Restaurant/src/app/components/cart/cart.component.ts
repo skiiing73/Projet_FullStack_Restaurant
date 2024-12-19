@@ -59,7 +59,7 @@ export class CartComponent {
     });
   
     // Créer l'objet commande
-    const order = { list_id_dish, username, status };
+    const order = {list_id_dish, username, status };
     console.log("Liste des IDs des plats : ", list_id_dish);
     console.log("Commande complète : ", order);
   
