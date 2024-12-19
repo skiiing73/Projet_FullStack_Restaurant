@@ -2,6 +2,9 @@
 
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
+# Config
+config.js
+
 # Compiled output
 /App_Restaurant/dist
 /App_Restaurant/tmp
@@ -46,9 +49,6 @@
 
 
 ############### BACK_END ###############
-
-# Config
-config.js
 
 # Node modules
 /Back_End/node_modules/
