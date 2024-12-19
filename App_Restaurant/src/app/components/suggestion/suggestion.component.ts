@@ -1,18 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DishService } from 'src/app/services/dish.service';
-import { CartService } from 'src/app/services/cart.service';
-import { OrderService } from 'src/app/services/order.service';
+import { DishService } from '../../services/dish.service';
+import { CartService } from '../../services/cart.service';
+import { OrderService } from '../../services/order.service';
+import { DishRecommondationsComponent } from '../dish-recommondations/dish-recommondations.component';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
-  selector: 'app-suggestion',
+  selector: 'app-recommondations',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, DishRecommondationsComponent, RouterModule],
   templateUrl: './suggestion.component.html',
   styleUrls: ['./suggestion.component.css']
 })
+
 export class SuggestionComponent implements OnInit {
-  suggestions: any[] = [];
+  recommondations: any[] = [];
 
   constructor(
     private dishService: DishService,
@@ -24,8 +29,9 @@ export class SuggestionComponent implements OnInit {
     const cart = this.cartService.getCartItems();
     this.dishService.getDishes().subscribe(dishes => {
       this.orderService.getOrder().subscribe(order => {
-        this.suggestions = this.getRecommendedDishes(dishes, cart, order).slice(0, 5);
-        console.log(this.suggestions);
+        this.recommondations = this.getRecommendedDishes(dishes, cart, order);
+
+        console.log(this.recommondations);
       });
     });
   }
@@ -59,10 +65,11 @@ export class SuggestionComponent implements OnInit {
   }
 
   shuffleArray(array: any[]): any[] {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
   }
+
 }
