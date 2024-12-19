@@ -4,7 +4,7 @@
   <img [src]="dish.picture" alt="Dish Image" class="img-fluid mb-3">
   <ul>
     <li *ngFor="let opinion of opinions">
-      <strong>{{ opinion.user }}</strong>: {{ opinion.comment }}
+      <strong>{{ opinion.username }}</strong>: {{ opinion.comment }}
       <div class="stars">
         <span *ngFor="let i of stars(opinion.rating)" [ngClass]="{'filled': i <= opinion.rating}">&#9733;</span>
       </div>

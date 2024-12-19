@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OrderService {
+  
   private apiUrlOrder = 'http://localhost:3000/order/getAll'; 
   username = localStorage.getItem('username');
   constructor(private http: HttpClient) {}
@@ -14,6 +15,9 @@ export class OrderService {
   getOrder(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrlOrder}/${this.username}`);
   }
-  
+
+  sendOrder(cartItems: any[]): Observable<any>{
+    return this.http.put<any[]>(`${this.apiUrlOrder}/${this.username}`,cartItems);
+  }
   
 }
