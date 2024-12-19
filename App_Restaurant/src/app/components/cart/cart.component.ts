@@ -5,6 +5,7 @@ import { RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import confetti from 'canvas-confetti';
+import { OrderService } from '../../services/order.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class CartComponent {
   
   cartItems: any[] = [];
   cartsubmit:boolean =false;
-  constructor(private router: Router, private cartService : CartService) {}
+  constructor(private router: Router, private cartService : CartService,private orderService:OrderService) {}
  
   ngOnInit() {
     // Initialize cartItems once the component is initialized
@@ -45,21 +46,29 @@ export class CartComponent {
     this.router.navigate(['/dishes']);
   }
 
-
   checkout() {
     confetti({
       particleCount: 100, 
       spread: 70, 
       origin: { y: 0.6 }
     });
-    alert('Proceeding to checkout');
+
+    this.orderService.sendOrder(this.cartItems).subscribe(
+
+      (response) => {
+        console.log('Command send successfully:', response);
+        this.cartService.removeAllFromCart();
+        this.cartItems = this.cartService.getCartItems();
+        this.cartsubmit=true;
+        setTimeout(() => {
+          this.cartsubmit=false;
+        }, 7000);
+      },
+      (error) => {
+        console.error('Error updating profile:', error);
+      }
+    );
     
-    this.cartService.removeAllFromCart();
-    this.cartItems = this.cartService.getCartItems();
-    this.cartsubmit=true;
-    setTimeout(() => {
-      this.cartsubmit=false;
-    }, 7000);
     
   }
 }

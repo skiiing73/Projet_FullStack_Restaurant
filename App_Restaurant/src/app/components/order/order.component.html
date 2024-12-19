@@ -1,5 +1,5 @@
 <h3>Order Details</h3>
-<div *ngFor="let dish of order.dishes" class="order-item">
+<div *ngFor="let dish of order.list_id_dish" class="order-item">
   <img [src]="dish.picture" alt="{{ dish.name }}" class="order-picture">
   <div class="order-details">
     <h4>{{ dish.name }}</h4>
