@@ -1,5 +1,7 @@
-
 <div class="opinion-container">
+  <button class="back-btn" (click)="goBack()">
+    <img class="fleche-pic" [src]="'./assets/fleche.webp'" >
+  </button>
   <h2>Opinions for Dish {{ dish.name }}</h2>
   <img [src]="dish.picture" alt="Dish Image" class="img-fluid mb-3">
   <ul>
@@ -12,11 +14,14 @@
   </ul>
 </div>
 
+<!-- Flèche retour -->
+
+
 <div class="form-container">
   <h2>And you, what do you think ?!</h2>
   <form (submit)="addOpinion(comment.value, rate.valueAsNumber)">
     <input #comment type="text" placeholder="Your Comment" required />
-    <input #rate type="number" min="1" max="5" placeholder="rate" required />
+    <input #rate type="number" min="0" max="5" placeholder="rate" required />
     <button type="submit">Add Opinion</button>
   </form>
 </div>

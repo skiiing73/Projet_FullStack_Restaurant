@@ -23,7 +23,10 @@
     text-align: center;
     
   }
-  
+  .dish-card .price{
+    text-align: center;
+    font-size: 18px;
+  }
   .btn_price{
     
     display:flex;

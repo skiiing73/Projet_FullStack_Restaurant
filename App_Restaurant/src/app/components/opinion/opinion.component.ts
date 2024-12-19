@@ -1,7 +1,7 @@
 // opinion.component.ts
 import { Component, OnInit } from '@angular/core';
 import { OpinionService } from '../../services/opinion.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Dish } from '../../../dish';
 import { CommonModule } from '@angular/common';
 import { DishService } from '../../services/dish.service';
@@ -18,7 +18,7 @@ export class OpinionComponent implements OnInit{
   dish!:Dish;
   opinions: { username: string; rate: number;comment: string }[] = [];
   
-  constructor(private opinionService: OpinionService, private route: ActivatedRoute,private dishService: DishService) {}
+  constructor(private opinionService: OpinionService, private route: ActivatedRoute,private dishService: DishService,private router: Router) {}
 
   ngOnInit() {  
     this.opinions=[];
@@ -74,6 +74,8 @@ export class OpinionComponent implements OnInit{
       console.log("Username is unknown, unable to submit opinion");
     }
   }
-  
+  goBack(): void {
+    this.router.navigate(['/dishes']); // Revenir à la page précédente
+  }
   
 }
