@@ -1,5 +1,5 @@
 import Opinion from '../models/opinionModel.js';
-
+import mongoose from 'mongoose';
 export const createOpinion = async (req, res) => {
     const { id_plat, username, rate, comment } = req.body;
 
@@ -35,12 +35,9 @@ export const createOpinion = async (req, res) => {
 import mongoose from 'mongoose'; // Importer mongoose pour utiliser ObjectId
 
 export const getOpinionsByDishId = async (req, res) => {
-    const { id_plat } = req.params;
-
+    const { id } = req.params;
     try {
-        // Convertir id_plat en ObjectId
-        const dishId = mongoose.Types.ObjectId(id_plat); 
-
+        const dishId = new mongoose.Types.ObjectId(id);
         // Récupérer les opinions associées
         const opinions = await Opinion.find({ dishId });
 
