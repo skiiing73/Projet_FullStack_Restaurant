@@ -2,9 +2,13 @@ import { Dish } from './dish';
 
 export class Order {
     dishes: Dish[]; // Array of Dish objects
+    username:string;
+    status:string
 
-    constructor(dishes: Dish[] = []) {
+    constructor(dishes: Dish[] = [],username:string,status:string) {
         this.dishes = dishes;
+        this.username=username;
+        this.status=status;
     }
 
     // Method to calculate total price of the order

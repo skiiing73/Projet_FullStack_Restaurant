@@ -1,13 +1,13 @@
 <div class="main-container">
-    <h1> Contactez Nous !!</h1>
-    <p> Un problème, une suggestion n'hésitez pas à nous envoyer un message nous tiendrons comptre de vos remarques !</p>
+    <h1> Contact Us !!</h1>
+    <p>  If you have a problem or a suggestion, don't hesitate to send us a message and we'll take your comments into account!</p>
     <div class="container">
     
-        <h2>Envoyer un Message</h2>
+        <h2>Send a Message</h2>
         <form (ngSubmit)="sendMessage()" #messageForm="ngForm">
-            <input type="text" [(ngModel)]="name" name="name" placeholder="Votre nom" required>
-            <textarea [(ngModel)]="message" name="message" placeholder="Votre message" required></textarea>
-            <button type="submit">Envoyer</button>
+            <input type="text" [(ngModel)]="name" name="name" placeholder="Name" required>
+            <textarea [(ngModel)]="message" name="message" placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
         </form>
         <p>{{ status }}</p>
     </div>

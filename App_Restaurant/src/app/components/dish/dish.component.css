@@ -1,5 +1,5 @@
 .dish-card {
-    background-color: #ffcccc;
+    background-color: #ffffff;
     padding: 15px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -38,7 +38,7 @@
   
   .dish-card button {
     font-weight: bold;
-    background-color: #6c63ff;
+    
     color: black;
     
   }
@@ -112,4 +112,15 @@
     margin-left :.5rem;
   }
    
-  
+  .btn_opinion {
+    background-color: rgb(255, 255, 255);
+    display :flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    color: black;            
+    box-shadow: 0 0 20px #ffffff;
+    border:none;
+    
+  }

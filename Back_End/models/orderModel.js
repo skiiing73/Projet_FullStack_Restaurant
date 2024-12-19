@@ -2,22 +2,23 @@ import mongoose from 'mongoose';
 
 // Définition du schéma utilisateur
 const CommandSchema = new mongoose.Schema({
-    list: {
-        type: Array,
+    list_id_dish: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Dish', // Ref to Dish
         required: true,
-    },
-    id_User: {
+    }],
+    username: {
         type: String,
         required: true,
     },
-    etat: {
+    status: {
         type: String,
         required: true,
     }
 });
 
-// Création du modèle utilisateur
-const Command = mongoose.model('Command', CommandSchema, 'command');
+// Création du modèle Command
+const Command = mongoose.model('Order', CommandSchema, 'order');
 
 // Exportation du modèle
 export default Command;

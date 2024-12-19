@@ -11,6 +11,7 @@ import cors from 'cors';
 import dishRoutes from './routes/dishRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import opinionRoutes from './routes/opinionRoutes.js';
+import orderRoutes from './routes/orderRoutes.js';
 
 const app = express();
 const port = 3000;
@@ -30,7 +31,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 // Use routes
 app.use('/dish', dishRoutes);
 app.use('/user', userRoutes);
-app.use('/opinion', opinionRoutes);
+app.use('/order', orderRoutes)
 
 // Serve the frontend page
 app.get('/', (req, res) => {

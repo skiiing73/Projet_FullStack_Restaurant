@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   standalone: true,
-  imports: [RouterOutlet, RouterModule,CommonModule]
+  imports: [RouterModule, CommonModule]
 })
 export class HeaderComponent {
   restaurantName: string = 'Amazing Restaurant';

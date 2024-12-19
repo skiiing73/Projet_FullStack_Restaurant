@@ -1,0 +1,97 @@
+
+.opinion-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 600px;
+}
+  
+.opinion-container h2 {
+text-align: center;
+font-size: 24px;
+color: #333;
+margin-bottom: 20px;
+}
+
+.img-fluid{
+    display:block;
+    margin:auto;
+    max-width: 190px;
+    min-width: 190px;
+    max-height: 150px;
+    min-height: 150px;
+    border-radius: 8px;
+    padding:5px;
+}
+
+.opinion-container ul {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.opinion-container ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.stars {
+    font-size: 1.5em;
+    color: grey;
+}
+
+.stars .filled {
+    color: gold;
+}
+  
+
+
+/* Formulaire*/
+.form-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.form-container form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-container form input {
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+
+.form-container form input:focus {
+outline: none;
+border-color: #28d054; 
+}
+
+.form-container form button {
+padding: 10px 15px;
+font-size: 18px;
+color: #000000;
+background-color: #28d054; 
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.form-container form button:hover {
+background-color: #28d054; 
+}

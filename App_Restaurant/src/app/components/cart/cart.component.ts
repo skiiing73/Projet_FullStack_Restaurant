@@ -12,7 +12,7 @@ import confetti from 'canvas-confetti';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
   standalone:true,
-  imports: [HeaderComponent,CommonModule,RouterOutlet]
+  imports: [CommonModule]
 })
 export class CartComponent {
   
@@ -53,6 +53,7 @@ export class CartComponent {
       origin: { y: 0.6 }
     });
     alert('Proceeding to checkout');
+    
     this.cartService.removeAllFromCart();
     this.cartItems = this.cartService.getCartItems();
     this.cartsubmit=true;
