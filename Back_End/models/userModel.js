@@ -40,7 +40,11 @@ UserSchema.pre('save', async function (next) {
 
 // Méthode pour comparer le mot de passe lors de la connexion
 UserSchema.methods.comparePassword = async function (password) {
-    return await bcrypt.compare(password, this.password); // Compare le mot de passe fourni avec le haché
+  const hashedPassword = await bcrypt.hash(password, 10);  // Hachage du mot de passe
+  
+  // Comparaison du mot de passe avec le hash
+  const isMatch = await bcrypt.compare(password, hashedPassword);
+  return isMatch;
 };
 
 // Création du modèle utilisateur
