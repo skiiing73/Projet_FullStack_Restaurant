@@ -45,8 +45,7 @@ export async function login(req, res) {
     }
 }
 
-
-import { parsePhoneNumberFromString } from 'libphonenumber-js';
+import { parsePhoneNumberFromString, AsYouType } from 'libphonenumber-js';
 import validator from 'validator';
 
 // Fonction pour mettre à jour un utilisateur
@@ -57,11 +56,18 @@ export async function updateUser(req, res) {
     try {
         // Normalisation du numéro de téléphone, si présent
         if (newData.phone) {
-            const phoneNumber = parsePhoneNumberFromString(newData.phone, 'FR'); // 'FR' pour la France, adapte selon le pays
+            const phoneNumber = parsePhoneNumberFromString(newData.phone);
             if (phoneNumber && phoneNumber.isValid()) {
                 newData.phone = phoneNumber.format('E.164'); // Formate le numéro en E.164, un format international standard
             } else {
-                return res.status(400).json({ message: 'Numéro de téléphone invalide' });
+                // Essayer de formater le numéro comme un numéro français
+                const formattedPhone = new AsYouType('FR').input(newData.phone);
+                const frenchPhoneNumber = parsePhoneNumberFromString(formattedPhone, 'FR');
+                if (frenchPhoneNumber && frenchPhoneNumber.isValid()) {
+                    newData.phone = frenchPhoneNumber.format('E.164');
+                } else {
+                    return res.status(400).json({ message: 'Numéro de téléphone invalide' });
+                }
             }
         }
 
