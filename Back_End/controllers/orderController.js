@@ -3,19 +3,19 @@ import Dish from '../models/dishModel.js';
 
 // Function to create an order
 export const createOrder = async (req, res) => {
-    const { list_of_dish_id, username } = req.body;
+    const { list_id_dish, username, status } = req.body;
 
     // Check required fields
-    if (!list_of_dish_id || !username) {
+    if (!list_id_dish || !username) {
         return res.status(400).json({ message: 'Please fill in all fields' });
     }
 
-    if (!Array.isArray(list_of_dish_id) || list_of_dish_id.length === 0) {
+    if (!Array.isArray(list_id_dish) || list_id_dish.length === 0) {
         return res.status(400).json({ message: 'The list of dish IDs must be a non-empty array' });
     }
 
     try {
-        const newOrder = new Order({ list_of_dish_id, username });
+        const newOrder = new Order({ list_id_dish, username, status });
         await newOrder.save();
         res.status(201).json({ message: 'Order created successfully', order: newOrder });
     } catch (err) {

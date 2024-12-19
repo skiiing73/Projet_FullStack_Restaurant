@@ -15,6 +15,8 @@ const CommandSchema = new mongoose.Schema({
         type: String,
         required: true,
     }
+}, {
+    versionKey: false, // Désactive le champ __v
 });
 
 // Création du modèle Command
