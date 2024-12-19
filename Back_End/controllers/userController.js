@@ -6,8 +6,13 @@ export async function createUser(req, res) {
     const { username, email, phone, password } = req.body;
 
     try {
-        const hashedPassword = await bcrypt.hash(password, 10); // Hachage du mot de passe
-        const newUser = new User({ username, password: hashedPassword, email, phone });
+        // Vérifie si un utilisateur avec le même nom d'utilisateur existe déjà
+        const existingUser = await User.findOne({ username });
+        if (existingUser) {
+            return res.status(409).json({ message: 'Le nom d\'utilisateur est déjà pris' });
+        }
+
+        const newUser = new User({ username, password, email, phone });
         const savedUser = await newUser.save();
         res.status(201).json({ message: 'Utilisateur créé', user: savedUser });
     } catch (error) {
@@ -29,7 +34,7 @@ export async function login(req, res) {
             return res.status(404).json({ message: 'Utilisateur non trouvé' });
         }
 
-        const isMatch = await bcrypt.compare(password, user.password);
+        const isMatch = await user.comparePassword(password); // Utilisation de la méthode du modèle
         if (isMatch) {
             res.status(200).json({ message: 'Connexion réussie' });
         } else {
@@ -39,6 +44,7 @@ export async function login(req, res) {
         res.status(500).json({ message: 'Erreur lors de la comparaison du mot de passe', error: error.message });
     }
 }
+
 
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
 import validator from 'validator';

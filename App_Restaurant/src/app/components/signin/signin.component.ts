@@ -10,11 +10,11 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css'],
-  imports:[CommonModule,FormsModule,RouterOutlet,RouterModule]
+  imports:[CommonModule,FormsModule,RouterModule]
 })
 
 export class SigninComponent {
-  mail: string = '';
+  email: string = '';
   password: string = '';
   phone:string='';
   username:string='';
@@ -24,20 +24,35 @@ export class SigninComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onSignin(): void {
-    // Check if password and confirm password match
+    // Vérifiez si le mot de passe et la confirmation du mot de passe correspondent
     if (this.password !== this.confirmpassword) {
       this.errorMessage = 'Passwords do not match!';
-      return; // Stop form submission if passwords don't match
+      return; // Arrêter la soumission du formulaire si les mots de passe ne correspondent pas
     }
-    if(this.mail !=="" && this.phone !=="" && this.username !="" && this.password !=""){
-      this.router.navigate(['/dishes']); // Redirect to the dishes page after successful signin
-      this.authService.signin(this.username,this.mail,this.phone,this.password,)
-      // Reset error message
-      this.errorMessage = null;
-      return
+  
+    // Vérifiez si tous les champs sont remplis
+    if (this.email !== "" && this.phone !== "" && this.username !== "" && this.password !== "") {
+      this.authService.signin(this.username, this.email, this.phone, this.password).subscribe(
+        _response => {
+          // Si l'inscription réussie, rediriger vers la page des plats
+          this.router.navigate(['/dishes']);
+          
+          // Réinitialiser le message d'erreur
+          this.errorMessage = null;
+        },
+        error => {
+          // Si une erreur se produit, afficher le message d'erreur spécifique
+          if (error.status === 409) {
+            this.errorMessage = 'Le nom d\'utilisateur est déjà pris. Veuillez en choisir un autre.';
+          } else {
+            this.errorMessage = 'Erreur lors de l\'inscription. Veuillez réessayer.';
+          }
+          console.error('Signin failed', error);
+        }
+      );
+    } else {
+      this.errorMessage = 'Veuillez remplir tous les champs!';
     }
-    this.errorMessage = 'Fill everything!';
-    return
-      
   }
+  
 }

@@ -6,6 +6,10 @@ const DishSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    picture:{
+        type:String,
+        required:true,
+    },
     price: {
         type: String, // Vous pouvez changer en Number si vous souhaitez effectuer des calculs
         required: true,

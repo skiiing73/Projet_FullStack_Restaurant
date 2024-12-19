@@ -6,7 +6,7 @@
     
     <div *ngIf="cartItems.length === 0 && cartsubmit === false" class="empty-cart">
         <p>Your cart is empty ! Buy something to start a cart.</p>
-        <img src="./assets/cart_picture.jpg" alt="cart_picture" class="cart-image">
+        <img src="./assets/cart_picture.webp" alt="cart_picture" class="cart-image">
         <button class="return-home" (click)="goToHome()">Buy Something</button>
     </div>
 
@@ -18,13 +18,13 @@
 
     <div *ngIf="cartItems.length > 0">
       <div *ngFor="let item of cartItems" class="cart-item">
-        <img [src]="item.photo" alt="{{ item.name }}" class="cart-item-image">
+        <img [src]="item.picture" alt="{{ item.name }}" class="cart-item-image">
         <div class="cart-item-details">
           <h4>{{ item.name }}</h4>
           <p>Price: ${{ item.price }}</p>
           <p>Quantity: {{ item.quantity }}</p>
-          <button class="remove-btn" (click)="removeFromCart(item.id)">-</button>
-          <button class="add-btn" (click)="addAgainToCart(item.id)">+</button>
+          <button class="remove-btn" (click)="removeFromCart(item._id)">-</button>
+          <button class="add-btn" (click)="addAgainToCart(item._id)">+</button>
         </div>
       </div>
   
