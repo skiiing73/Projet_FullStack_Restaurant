@@ -48,7 +48,7 @@
 ############### BACK_END ###############
 
 # Config
-/Back_End/config.js
+config.js
 
 # Node modules
 /Back_End/node_modules/
