@@ -10,6 +10,7 @@ import cors from 'cors';
 // Import routes
 import dishRoutes from './routes/dishRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import opinionRoutes from './routes/opinionRoutes.js';
 
 const app = express();
 const port = 3000;
@@ -29,24 +30,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 // Use routes
 app.use('/dish', dishRoutes);
 app.use('/user', userRoutes);
-
-// POST: Add a new dish
-app.post('/add_dish', async (req, res) => {
-    const Collection = mongoose.connection.collection('dish');
-    const newDish = {
-        name: req.body.name,
-        price: req.body.price,
-        description: req.body.description,
-        type: req.body.type
-    };
-
-    try {
-        await Collection.insertOne(newDish);
-        res.redirect('/'); // Redirect back to the main page
-    } catch (err) {
-        res.status(500).send('Error adding dish');
-    }
-});
+app.use('/opinion', opinionRoutes);
 
 // Serve the frontend page
 app.get('/', (req, res) => {
