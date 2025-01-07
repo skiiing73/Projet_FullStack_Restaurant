@@ -1,0 +1,10 @@
+<div class="recommandations-container">
+  <h2>Other Dishes you may like</h2>
+  <div class="recommandations-scroll">
+    <ul>
+      <li *ngFor="let dish of recommandations">
+        <app-dish-recommandations [dish]="dish"></app-dish-recommandations>
+      </li>
+    </ul>
+  </div>
+</div>
