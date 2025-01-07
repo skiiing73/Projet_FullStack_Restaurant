@@ -1,6 +1,5 @@
-
 # Projet FullStack Restaurant  
-
+Application created by Bercier Thomas, Degouey Corentin, Wilhelm Arno
 ## Table of Contents  
 - [Installation](#installation)  
 - [Technologies Used](#technologies-used)  
