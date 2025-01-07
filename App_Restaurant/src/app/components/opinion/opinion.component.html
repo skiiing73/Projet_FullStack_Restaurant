@@ -18,7 +18,7 @@
   <h2>And you, what do you think ?!</h2>
   <form (submit)="addOpinion(comment.value, rate.valueAsNumber)">
     <input #comment type="text" placeholder="Your Comment" required />
-    <input #rate type="number" min="0" max="5" placeholder="rate" required />
+    <input #rate type="number" min="0" max="5" placeholder="rate (1 - 5) " required />
     <button type="submit">Add Opinion</button>
   </form>
 </div>

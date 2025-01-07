@@ -40,7 +40,7 @@ export class EditProfileComponent {
       );
     }
   }
-  goBack() :void{
-    this.router.navigate(['/profile']); 
+  goBack(): void {
+    this.editComplete.emit(); // Notifie le parent pour fermer l'édition
   }
 }
