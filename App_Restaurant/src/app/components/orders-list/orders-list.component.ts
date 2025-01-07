@@ -43,6 +43,7 @@ export class OrdersListComponent {
               dishes
             );
           });
+          this.orders.reverse();
         } else {
           console.error('Invalid orders data:', ordersData);
         }
