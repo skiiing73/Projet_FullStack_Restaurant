@@ -6,15 +6,16 @@ import { Router } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import confetti from 'canvas-confetti';
 import { OrderService } from '../../services/order.service';
-
+import { RecommandationComponent } from '../recommandation/recommandation.component';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
-  standalone:true,
-  imports: [CommonModule]
+  standalone: true,
+  imports: [CommonModule, RecommandationComponent]
 })
+
 export class CartComponent {
   
   cartItems: any[] = [];
@@ -25,12 +26,10 @@ export class CartComponent {
     // Initialize cartItems once the component is initialized
     this.cartItems = this.cartService.getCartItems();
   }
-
  
   getTotalPrice(): number {
     return this.cartService.getTotalPrice();
   }
-
   
   addAgainToCart(Item_id:string){
     this.cartService.addAgainToCart(Item_id);

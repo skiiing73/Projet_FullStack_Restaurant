@@ -1,0 +1,117 @@
+.dish-card {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 15px; 
+  background-color: white; 
+  margin: 20px;
+  min-height: 225px;
+  max-height: 225px;
+}
+
+.badge {
+  font-size: 12px;
+  background-color: #ffffff;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 50px;
+}
+
+.dish-card h5 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+  
+}
+.dish-card .price{
+  text-align: center;
+  font-size: 18px;
+}
+.btn_price{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dish-card p {
+  margin:15px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.dish-card button {
+  font-weight: bold;
+  
+  color: black;
+  
+}
+.img-fluid{
+  display:block;
+  margin:auto;
+  width: 100px;
+  height: 100px;
+
+  border-radius: 8px;
+}
+
+          
+.btn_cart {
+  background-image: linear-gradient(to right, #28c049 0%, #31e158  100%);
+  
+  padding: 10px 20px;
+  display :flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: black;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  
+}
+
+.btn_cart:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.btn-clicked {
+  animation: bounceZoom 0.3s ease, raiseEffect 0.2s ease;
+}
+
+@keyframes bounceZoom {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes raiseEffect {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+.cart-pic{
+  width: 20px;
+  height: 20px;
+  margin-left :.5rem;
+}

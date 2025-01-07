@@ -35,7 +35,7 @@ export async function login(req, res) {
         }
 
         const isMatch = await user.comparePassword(password); // Utilisation de la méthode du modèle
-        console.log(password);
+        
         if (isMatch) {
             res.status(200).json({ message: 'Connexion réussie' });
         } else {

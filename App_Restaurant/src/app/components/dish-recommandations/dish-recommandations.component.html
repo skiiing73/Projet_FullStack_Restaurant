@@ -1,0 +1,18 @@
+<div class="card dish-card">
+    <div class="card-body text-center">
+      <span class="badge" style="position: absolute; top: 10px; left: 10px;">{{ dish.type }}</span>
+      <img [src]="dish.picture" alt="Dish Image" class="img-fluid mb-3">
+      <h5>{{ dish.name }}</h5>
+      <div class="price"><strong>{{ dish.price }} $</strong></div>
+
+      <div class="btn_price">
+
+        <button class="btn_cart" (click)="onAddToCart($event)">
+          Add To Cart
+          <img src="./assets/cart.png" alt="Cart" class="cart-pic">
+        </button>
+
+      </div>
+    </div>
+  </div>
+  

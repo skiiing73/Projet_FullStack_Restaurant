@@ -1,8 +1,0 @@
-<div class="suggestions-container">
-    <h2>Other Dishes you may like</h2>
-    <ul>
-      <li *ngFor="let dish of suggestions">
-        <a [routerLink]="['/dish', dish.id]">{{ dish.name }}</a>
-      </li>
-    </ul>
-</div>
