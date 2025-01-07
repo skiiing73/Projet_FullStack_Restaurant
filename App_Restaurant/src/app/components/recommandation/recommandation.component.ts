@@ -6,6 +6,7 @@ import { OrderService } from '../../services/order.service';
 import { DishRecommondationsComponent } from '../dish-recommandations/dish-recommandations.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { symlinkSync } from 'node:fs';
 
 
 @Component({
@@ -21,15 +22,14 @@ export class RecommandationComponent implements OnInit {
 
   constructor(
     private dishService: DishService,
-    private cartService: CartService,
-    private orderService: OrderService
+    private cartService: CartService
   ) {}
 
   async ngOnInit() {
     const cart = this.cartService.getCartItems();
-    this.dishService.getDishes().subscribe(dishes => {
+    this.dishService.getAllDish().subscribe(dishes => {
         this.recommandations = this.getRecommendedDishes(dishes, cart);
-        console.log(this.recommandations);
+        
     });
   }
 
@@ -42,10 +42,11 @@ export class RecommandationComponent implements OnInit {
   }
 
   getRecommendedDishes(allDishes: any[], userCart: any[]): any[] {
-    const cartDishIds = userCart.map(dish => dish._id.$oid);
+    const cartDishIds = userCart.map(dish => dish._id);
 
     // Filtrer les plats qui ne sont pas dans le panier
-    const dishesNotInCart = allDishes.filter(dish => !cartDishIds.includes(dish._id.$oid));
+    const dishesNotInCart = allDishes.filter(dish => !cartDishIds.includes(dish._id));
+    console.log(dishesNotInCart)
 
     // Mélanger les plats restants
     const shuffledDishes = this.shuffleArray(dishesNotInCart);
