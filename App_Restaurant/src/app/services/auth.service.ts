@@ -20,6 +20,7 @@ export class AuthService {
       tap(() => {
         localStorage.setItem('isAuthenticated', 'true');
         localStorage.setItem('username', username);
+        
       }),
       catchError((error) => {
         console.error('Login error', error);
