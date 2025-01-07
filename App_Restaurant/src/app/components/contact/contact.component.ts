@@ -15,7 +15,7 @@ export class ContactComponent {
 
   sendMessage() {
       // Simule le traitement du message
-      this.status = `Message envoyé par ${this.name}: ${this.message}`;
+      this.status = `Merci pour votre retour nous reviendrons vers vous rapidement.`;
       
       // Réinitialiser les champs
       this.name = '';
