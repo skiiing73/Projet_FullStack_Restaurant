@@ -35,11 +35,11 @@ Ensure you have the following installed on your machine:
    ./run.ps1 
    ```  
 6. If the script doesn't work :
-6.1 Navigate to App_Restaurant:
+   Navigate to App_Restaurant:
     ```bash
      ng serve
     ```
-6.2 Navigate to Back_End :
+    Navigate to Back_End :
    ```bash  
    node api.js
    ``` 
