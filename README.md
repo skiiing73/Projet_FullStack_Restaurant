@@ -44,8 +44,7 @@ Ensure you have the following installed on your machine:
    node api.js
    ``` 
 7. Open your browser and go to [http://localhost:4200](http://localhost:4200).
-   
-8.Put your windows in the developper mode of your browser and choose a smartphonelayout.
+8. Put your windows in the developper mode of your browser and choose a smartphonelayout.
 
 ---
 
