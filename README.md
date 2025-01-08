@@ -26,16 +26,26 @@ Ensure you have the following installed on your machine:
    cd Projet_FullStack_Restaurant  
    ```  
 
-3. Add a `config.js` file in the root folder (`Projet_FullStack_Restaurant`).  
+3. Add the `config.js` file in the root folder (`Projet_FullStack_Restaurant`).  
 
 4. Connect to the university VPN using Cisco AnyConnect (or your university’s VPN client).  
 
-5. Run the `restaurant.ps1` script in your powershell:  
+5. Run the `run.ps1` script in your powershell:  
    ```bash  
-   ./restaurant.ps1 
+   ./run.ps1 
    ```  
-
-6. Open your browser and go to [http://localhost:4200](http://localhost:4200).  
+6. If the script doesn't work :
+6.1 Navigate to App_Restaurant:
+    ```bash
+     ng serve
+    ```
+6.2 Navigate to Back_End :
+   ```bash  
+   node api.js
+   ``` 
+7. Open your browser and go to [http://localhost:4200](http://localhost:4200).
+   
+8.Put your windows in the developper mode of your browser and choose a smartphonelayout.
 
 ---
 
